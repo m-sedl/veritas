@@ -40,7 +40,7 @@ public class SequencePointsIndexTests
             "/home/msedlyarskiy/benchmark/tools/reports/pvs/NLog_src_NLog.sarif"
         };
     }
-    
+
     [Theory]
     [MemberData(nameof(AnalyzedProjects))]
     public void IndexingQuality(string projectDir, string reportPath)
@@ -54,9 +54,9 @@ public class SequencePointsIndexTests
             .Select(l => l.PhysicalLocation);
 
         var allResults = locations.Select(loc =>
-            index.FindInstructions(loc.ArtifactLocation.Uri.AbsolutePath, loc.Region.StartLine)
+            index.FindInstructions(loc)
         ).ToList();
-        
+
         allResults.ForEach(Assert.NotNull);
         var emptyResults = allResults.Count(r => r.Count == 0);
         var notFound = emptyResults * 100.0 / allResults.Count;

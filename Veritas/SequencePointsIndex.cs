@@ -1,11 +1,12 @@
+using Microsoft.CodeAnalysis.Sarif;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 
 namespace Veritas;
 
-public class SequencePointsIndex
+public class SequencePointsIndex : ISequencePointsIndex
 {
-    private readonly Dictionary<string, HashSet<MarkedInstruction>> _index = new ();
+    private readonly Dictionary<string, HashSet<MarkedInstruction>> _index = new();
     private readonly ReaderParameters _readerParameters = new() { ReadSymbols = true };
 
     public SequencePointsIndex(List<string> assemblyPaths)
@@ -28,10 +29,10 @@ public class SequencePointsIndex
             }
         }
     }
-    
+
     private void IndexAssembly(string assemblyPath)
     {
-        var assemblyDefinition = AssemblyDefinition.ReadAssembly (assemblyPath, _readerParameters);
+        var assemblyDefinition = AssemblyDefinition.ReadAssembly(assemblyPath, _readerParameters);
 
         var methods = assemblyDefinition.MainModule
             .GetTypes()
@@ -46,19 +47,17 @@ public class SequencePointsIndex
         var newIndex = points.GroupBy(p => p.DocumentPath).ToDictionary(g => g.Key, g => g.ToHashSet());
         MergeIndex(newIndex);
     }
-    
-    public List<MarkedInstruction> FindInstructions(string sourceFilePath, int startLine)
+
+    public List<MarkedInstruction> FindInstructions(PhysicalLocation location)
     {
+        var sourceFilePath = location.ArtifactLocation.Uri.AbsolutePath;
         if (!_index.ContainsKey(sourceFilePath))
         {
             return new List<MarkedInstruction>();
         }
-
-        var sf = _index[sourceFilePath].ToList();
-        // var result = sf
-        //     .GroupBy(sp => sp.StartLine - startLine)
-        //     .ToImmutableSortedDictionary(g => g.Key, g => g.ToList());
-        // return result.First(x => x.Value.Count > 0).Value.Select(p => p.Offset).ToList();
+        
+        var startLine = location.Region.StartLine;
+        var sf = _index[sourceFilePath];
         return sf.Where(sp => sp.StartLine == startLine).ToList();
     }
 
@@ -71,6 +70,7 @@ public class SequencePointsIndex
                 _index[url].UnionWith(points);
                 continue;
             }
+
             _index[url] = points;
         }
     }
