@@ -1,0 +1,3 @@
+[submodule "VSharp"]
+	path = VSharp
+	url = https://github.com/VSharp-team/VSharp
