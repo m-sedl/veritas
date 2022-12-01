@@ -4,5 +4,5 @@ namespace Veritas;
 
 public interface ISequencePointsIndex
 {
-    List<MarkedInstruction> FindInstructions(PhysicalLocation location);
+    List<PointInfo> FindPoints(PhysicalLocation location);
 }

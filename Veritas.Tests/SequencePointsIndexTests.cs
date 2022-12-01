@@ -19,7 +19,11 @@ public class SequencePointsIndexTests
     static List<string> GetAllDlls(string path)
     {
         var dir = new DirectoryInfo(path);
-        return dir.GetFiles("*.dll", SearchOption.AllDirectories).Select(f => f.FullName).ToList();
+        return dir
+            .GetFiles("*.dll", SearchOption.AllDirectories)
+            .Select(f => f.FullName)
+            .Where(f => !f.Contains("/obj/"))
+            .ToList();
     }
 
     public static IEnumerable<object[]> AnalyzedProjects()
@@ -27,23 +31,29 @@ public class SequencePointsIndexTests
         yield return new object[]
         {
             "/home/msedlyarskiy/benchmark/projects/litedb/",
-            "/home/msedlyarskiy/benchmark/tools/reports/pvs/litedb_LiteDB.sarif"
+            "/home/msedlyarskiy/benchmark/tools/reports/pvs/litedb_LiteDB.sarif",
+            51,
+            6
         };
         yield return new object[]
         {
             "/home/msedlyarskiy/benchmark/projects/btcpayserver/",
-            "/home/msedlyarskiy/benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif"
+            "/home/msedlyarskiy/benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif",
+            151,
+            4
         };
         yield return new object[]
         {
             "/home/msedlyarskiy/benchmark/projects/NLog/",
-            "/home/msedlyarskiy/benchmark/tools/reports/pvs/NLog_src_NLog.sarif"
+            "/home/msedlyarskiy/benchmark/tools/reports/pvs/NLog_src_NLog.sarif",
+            59,
+            101
         };
     }
 
     [Theory]
     [MemberData(nameof(AnalyzedProjects))]
-    public void IndexingQuality(string projectDir, string reportPath)
+    public void IndexingQuality(string projectDir, string reportPath, int expectedNotFound, int expectedMultiple)
     {
         var dllPaths = GetAllDlls(projectDir);
         var index = new SequencePointsIndex(dllPaths);
@@ -54,13 +64,17 @@ public class SequencePointsIndexTests
             .Select(l => l.PhysicalLocation);
 
         var allResults = locations.Select(loc =>
-            index.FindInstructions(loc)
+            index.FindPoints(loc)
         ).ToList();
 
         allResults.ForEach(Assert.NotNull);
-        var emptyResults = allResults.Count(r => r.Count == 0);
-        var notFound = emptyResults * 100.0 / allResults.Count;
-        _output.WriteLine($"{emptyResults}/{allResults.Count} -- {notFound:0.##}% locations not found");
-        Assert.True(notFound < 50.0);
+        var notFound = allResults.Count(r => r.Count == 0);
+        var multiple = allResults.Count(r => r.Count > 1);
+
+        _output.WriteLine($"{notFound}/{allResults.Count} locations not found");
+        _output.WriteLine($"{multiple}/{allResults.Count} with multiple points");
+        
+        Assert.Equal(expectedNotFound, notFound);
+        Assert.Equal(expectedMultiple, multiple);
     }
 }
