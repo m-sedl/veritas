@@ -1,4 +1,5 @@
 using Microsoft.CodeAnalysis.Sarif;
+using VSharp;
 
 namespace Veritas;
 
@@ -52,20 +53,21 @@ public class TargetsFactory
 
     private List<Target> BuildTargetsByLocations(IssueType issue, IList<Location> location)
     {
+        // now we can usually get targets for only half of the locations
         var targets = new List<Target>(location.Count / 2);
         foreach (var l in location)
         {
-            var points = _index.FindInstructions(l.PhysicalLocation);
+            var points = _index.FindPoints(l.PhysicalLocation);
             switch (points.Count)
             {
                 case 0:
                     continue;
                 case 1:
-                    targets.Add(new Target(issue, points[0].Offset));
+                    targets.Add(new Target(issue, points[0].Location, l));
                     break;
                 default:
                     var blocks = ResolveBaseBlocks(points);
-                    targets.AddRange(blocks.Select(b => new Target(issue, b, true)));
+                    targets.AddRange(blocks.Select(b => new Target(issue, b, l, true)));
                     break;
             }
         }
@@ -73,8 +75,29 @@ public class TargetsFactory
         return targets;
     }
 
-    private List<int> ResolveBaseBlocks(List<MarkedInstruction> points)
+    private IEnumerable<codeLocation> ResolveBaseBlocks(List<PointInfo> points)
     {
-        throw new NotImplementedException();
+        return points.Select(p =>
+        {
+            var method = p.Location.method;
+            var offset = method.CFG.ResolveBasicBlock(p.Location.offset);
+            return new codeLocation(offset, method);
+        });
+        // var result = new List<codeLocation>(points.Count);
+        // foreach (var p in points)
+        // {
+        //     var method = p.Location.method;
+        //     try
+        //     {
+        //         var offset = method.CFG.ResolveBasicBlock(p.Location.offset);
+        //         result.Add(new codeLocation(offset, method));
+        //     }
+        //     catch (Exception e)
+        //     {
+        //         Console.WriteLine(e);
+        //     }
+        // }
+        //
+        // return result;
     }
 }
