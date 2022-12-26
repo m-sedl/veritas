@@ -1,12 +1,20 @@
+using System.Reflection;
+using Microsoft.CodeAnalysis.Sarif;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
+using VSharp;
 
 namespace Veritas;
 
-public class SequencePointsIndex
+public class SequencePointsIndex : ISequencePointsIndex
 {
-    private readonly Dictionary<string, HashSet<MarkedInstruction>> _index = new ();
+    private readonly Dictionary<string, HashSet<PointInfo>> _index = new();
+
     private readonly ReaderParameters _readerParameters = new() { ReadSymbols = true };
+
+    private readonly HashSet<string> _processedAssemblies = new();
+
+    private readonly VeritasAssemblyLoadContext _alc = new("veritas_alc");
 
     public SequencePointsIndex(List<string> assemblyPaths)
     {
@@ -21,57 +29,84 @@ public class SequencePointsIndex
                 // Console.WriteLine($"Assembly {path} skipped because pdb not founded");
                 // TODO: need to add logging
             }
-            catch (Exception ex)
+            catch (BadImageFormatException)
             {
                 // TODO: need to add logging
-                Console.WriteLine(ex);
             }
         }
     }
-    
+
     private void IndexAssembly(string assemblyPath)
     {
-        var assemblyDefinition = AssemblyDefinition.ReadAssembly (assemblyPath, _readerParameters);
+        var assemblyDefinition = AssemblyDefinition.ReadAssembly(assemblyPath, _readerParameters);
+        if (_processedAssemblies.Contains(assemblyDefinition.FullName))
+        {
+            return;
+        }
 
-        var methods = assemblyDefinition.MainModule
-            .GetTypes()
+        Assembly assembly;
+        try
+        {
+            assembly = _alc.LoadFromAssemblyPath(assemblyPath);
+        }
+        catch (BadImageFormatException)
+        {
+            //TODO add logging
+            return;
+        }
+
+        var methods = assemblyDefinition.Modules
+            .SelectMany(m => m.GetTypes())
             .SelectMany(t => t.Methods.Where(m => m.HasBody));
 
-        var points = methods
-            .Where(m => m.DebugInformation.HasSequencePoints)
-            .SelectMany(m => m.DebugInformation.SequencePoints)
-            .Where(p => !p.IsHidden)
-            .Select(p => new MarkedInstruction(p));
-
-        var newIndex = points.GroupBy(p => p.DocumentPath).ToDictionary(g => g.Key, g => g.ToHashSet());
-        MergeIndex(newIndex);
+        IndexMethods(assembly, methods);
+        _processedAssemblies.Add(assemblyDefinition.Name.FullName);
     }
-    
-    public List<MarkedInstruction> FindInstructions(string sourceFilePath, int startLine)
+
+    private void IndexMethods(Assembly assembly, IEnumerable<MethodDefinition> methods)
     {
+        foreach (var m in methods.Where(m => m.DebugInformation.HasSequencePoints))
+        {
+            var ps = m.DebugInformation.SequencePoints;
+            var token = m.MetadataToken.ToInt32();
+            var vsMethod = FindMethod(assembly, token);
+            foreach (var p in ps.Where(p => !p.IsHidden))
+            {
+                if (!_index.ContainsKey(p.Document.Url))
+                {
+                    _index[p.Document.Url] = new HashSet<PointInfo>();
+                }
+                _index[p.Document.Url].Add(new PointInfo(p, vsMethod));
+            }
+        }
+    }
+
+    private Method FindMethod(Assembly assembly, int token)
+    {
+        foreach (var module in assembly.Modules)
+        {
+            var baseMethod = module.ResolveMethod(token);
+            if (baseMethod is null) continue;
+
+            var method = Application.getMethod(baseMethod);
+            if (method is not null)
+            {
+                return method;
+            }
+        }
+        throw new MethodNotFoundException(token);
+    }
+
+    public List<PointInfo> FindPoints(PhysicalLocation location)
+    {
+        var sourceFilePath = location.ArtifactLocation.Uri.AbsolutePath;
         if (!_index.ContainsKey(sourceFilePath))
         {
-            return new List<MarkedInstruction>();
+            return new List<PointInfo>();
         }
 
-        var sf = _index[sourceFilePath].ToList();
-        // var result = sf
-        //     .GroupBy(sp => sp.StartLine - startLine)
-        //     .ToImmutableSortedDictionary(g => g.Key, g => g.ToList());
-        // return result.First(x => x.Value.Count > 0).Value.Select(p => p.Offset).ToList();
+        var startLine = location.Region.StartLine;
+        var sf = _index[sourceFilePath];
         return sf.Where(sp => sp.StartLine == startLine).ToList();
-    }
-
-    private void MergeIndex(Dictionary<string, HashSet<MarkedInstruction>> newIndex)
-    {
-        foreach (var (url, points) in newIndex)
-        {
-            if (_index.ContainsKey(url))
-            {
-                _index[url].UnionWith(points);
-                continue;
-            }
-            _index[url] = points;
-        }
     }
 }

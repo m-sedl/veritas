@@ -7,11 +7,11 @@ using Xunit.Abstractions;
 
 namespace Veritas.Tests;
 
-public class SequencePointsIndexTests
+public class TargetsFactoryTests
 {
     private readonly ITestOutputHelper _output;
 
-    public SequencePointsIndexTests(ITestOutputHelper output)
+    public TargetsFactoryTests(ITestOutputHelper output)
     {
         _output = output;
     }
@@ -30,25 +30,6 @@ public class SequencePointsIndexTests
         {
             new[]
             {
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Tests/bin/Debug/net6.0/linux-x64/publish/",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Client/bin/Debug/netstandard2.1/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Common/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/Plugins/BTCPayServer.Plugins.Custodians.FakeCustodian/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Plugins.Test/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Abstractions/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.PluginPacker/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Data/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
-            },
-            "/home/msedlyarskiy/benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif",
-            155,
-            4
-        };
-        yield return new object[]
-        {
-            new[]
-            {
                 "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Stress/bin/Debug/netcoreapp3.1/publish",
                 "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Tests/bin/Debug/netcoreapp3.1/publish",
                 "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Benchmarks/bin/Debug/netcoreapp3.1/publish",
@@ -56,8 +37,8 @@ public class SequencePointsIndexTests
                 "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
             },
             "/home/msedlyarskiy/benchmark/tools/reports/pvs/litedb_LiteDB.sarif",
-            51,
-            3
+            14,
+            8
         };
         yield return new object[]
         {
@@ -77,35 +58,53 @@ public class SequencePointsIndexTests
                 "/home/msedlyarskiy/benchmark/projects/NLog/tests/PackageLoaderTestAssembly/bin/Debug/netstandard2.0/publish",
             },
             "/home/msedlyarskiy/benchmark/tools/reports/pvs/NLog_src_NLog.sarif",
-            59,
-            5
+            7,
+            3
+        };
+        yield return new object[]
+        {
+            new[]
+            {
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Tests/bin/Debug/net6.0/linux-x64/publish/",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Client/bin/Debug/netstandard2.1/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Common/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/Plugins/BTCPayServer.Plugins.Custodians.FakeCustodian/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Plugins.Test/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Abstractions/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.PluginPacker/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Data/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
+            },
+            "/home/msedlyarskiy/benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif",
+            67,
+            47
         };
     }
 
     [Theory]
     [MemberData(nameof(AnalyzedProjects))]
-    public void IndexingQuality(string[] binDirs, string reportPath, int expectedNotFound, int expectedMultiple)
+    public void BuildTargetsTest(string[] binDirs, string reportPath, int expectedTargets, int expectedBadResults)
     {
         var dllPaths = binDirs.SelectMany(GetAllDlls).ToList();
         var index = new SequencePointsIndex(dllPaths);
         var report = SarifLog.Load(reportPath);
 
-        var locations = report.Runs
-            .SelectMany(run => run.Results.SelectMany(r => r.Locations))
-            .Select(l => l.PhysicalLocation);
+        var factory = new TargetsFactory(index);
+        var result = factory.BuildTargets(report);
+        var baseBlocks = result.Targets.Count(t => t.IsBaseBlock);
 
-        var allResults = locations.Select(loc =>
-            index.FindPoints(loc)
-        ).ToList();
+        _output.WriteLine($"Targets: {result.Targets.Count}");
+        _output.WriteLine($"Bad results: {result.BadResults.Count}");
+        _output.WriteLine($"Base blocks: {baseBlocks}");
+        _output.WriteLine("");
 
-        allResults.ForEach(Assert.NotNull);
-        var notFound = allResults.Count(r => r.Count == 0);
-        var multiple = allResults.Count(r => r.Count > 1);
+        foreach (var t in result.Targets)
+        {
+            _output.WriteLine($"{t}\n-------");
+        }
 
-        _output.WriteLine($"{notFound}/{allResults.Count} locations not found");
-        _output.WriteLine($"{multiple}/{allResults.Count} with multiple points");
-
-        Assert.Equal(expectedNotFound, notFound);
-        Assert.Equal(expectedMultiple, multiple);
+        Assert.Equal(expectedBadResults, result.BadResults.Count);
+        Assert.Equal(expectedTargets, result.Targets.Count);
     }
 }
