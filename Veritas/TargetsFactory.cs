@@ -44,6 +44,7 @@ public class TargetsFactory
                     result.BadResults.Add(sarifResult);
                     continue;
                 }
+
                 targets.ForEach(t => result.Targets.Add(t));
             }
         }
@@ -83,21 +84,5 @@ public class TargetsFactory
             var offset = method.CFG.ResolveBasicBlock(p.Location.offset);
             return new codeLocation(offset, method);
         });
-        // var result = new List<codeLocation>(points.Count);
-        // foreach (var p in points)
-        // {
-        //     var method = p.Location.method;
-        //     try
-        //     {
-        //         var offset = method.CFG.ResolveBasicBlock(p.Location.offset);
-        //         result.Add(new codeLocation(offset, method));
-        //     }
-        //     catch (Exception e)
-        //     {
-        //         Console.WriteLine(e);
-        //     }
-        // }
-        //
-        // return result;
     }
 }

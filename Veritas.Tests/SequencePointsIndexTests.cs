@@ -16,46 +16,77 @@ public class SequencePointsIndexTests
         _output = output;
     }
 
-    static List<string> GetAllDlls(string path)
+    static IEnumerable<string> GetAllDlls(string path)
     {
         var dir = new DirectoryInfo(path);
         return dir
             .GetFiles("*.dll", SearchOption.AllDirectories)
-            .Select(f => f.FullName)
-            .Where(f => !f.Contains("/obj/"))
-            .ToList();
+            .Select(f => f.FullName);
     }
 
     public static IEnumerable<object[]> AnalyzedProjects()
     {
         yield return new object[]
         {
-            "/home/msedlyarskiy/benchmark/projects/litedb/",
-            "/home/msedlyarskiy/benchmark/tools/reports/pvs/litedb_LiteDB.sarif",
-            51,
-            6
-        };
-        yield return new object[]
-        {
-            "/home/msedlyarskiy/benchmark/projects/btcpayserver/",
+            new[]
+            {
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Tests/bin/Debug/net6.0/linux-x64/publish/",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Client/bin/Debug/netstandard2.1/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Common/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/Plugins/BTCPayServer.Plugins.Custodians.FakeCustodian/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Plugins.Test/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Abstractions/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.PluginPacker/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Data/bin/Debug/net6.0/linux-x64/publish",
+                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
+            },
             "/home/msedlyarskiy/benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif",
-            151,
+            155,
             4
         };
         yield return new object[]
         {
-            "/home/msedlyarskiy/benchmark/projects/NLog/",
+            new[]
+            {
+                "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Stress/bin/Debug/netcoreapp3.1/publish",
+                "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Tests/bin/Debug/netcoreapp3.1/publish",
+                "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Benchmarks/bin/Debug/netcoreapp3.1/publish",
+                "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB/bin/Debug/netstandard2.0/publish",
+                "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
+            },
+            "/home/msedlyarskiy/benchmark/tools/reports/pvs/litedb_LiteDB.sarif",
+            51,
+            3
+        };
+        yield return new object[]
+        {
+            new[]
+            {
+                "/home/msedlyarskiy/benchmark/projects/NLog/src/NLog.Database/bin/Debug/netstandard2.0/publish",
+                "/home/msedlyarskiy/benchmark/projects/NLog/src/NLog/bin/Debug/netstandard2.0/publish",
+                "/home/msedlyarskiy/benchmark/projects/NLog/src/NLog.WindowsEventLog/bin/Debug/netstandard2.0/publish",
+                "/home/msedlyarskiy/benchmark/projects/NLog/src/NLog.OutputDebugString/bin/Debug/netstandard2.0/publish",
+                "/home/msedlyarskiy/benchmark/projects/NLog/src/NLog.WindowsRegistry/bin/Debug/netstandard2.0/publish",
+                "/home/msedlyarskiy/benchmark/projects/NLog/tests/NLog.WindowsRegistry.Tests/bin/Debug/netcoreapp3.1/publish",
+                "/home/msedlyarskiy/benchmark/projects/NLog/tests/NLogAutoLoadExtension/bin/Debug/netstandard2.0/publish",
+                "/home/msedlyarskiy/benchmark/projects/NLog/tests/SampleExtensions/bin/Debug/netstandard2.0/publish",
+                "/home/msedlyarskiy/benchmark/projects/NLog/tests/NLog.UnitTests/bin/Debug/netcoreapp3.1/publish",
+                "/home/msedlyarskiy/benchmark/projects/NLog/tests/NLog.Database.Tests/bin/Debug/netcoreapp3.1/publish",
+                "/home/msedlyarskiy/benchmark/projects/NLog/tests/ManuallyLoadedExtension/bin/Debug/netstandard2.0/publish",
+                "/home/msedlyarskiy/benchmark/projects/NLog/tests/PackageLoaderTestAssembly/bin/Debug/netstandard2.0/publish",
+            },
             "/home/msedlyarskiy/benchmark/tools/reports/pvs/NLog_src_NLog.sarif",
             59,
-            101
+            5
         };
     }
 
     [Theory]
     [MemberData(nameof(AnalyzedProjects))]
-    public void IndexingQuality(string projectDir, string reportPath, int expectedNotFound, int expectedMultiple)
+    public void IndexingQuality(string[] binDirs, string reportPath, int expectedNotFound, int expectedMultiple)
     {
-        var dllPaths = GetAllDlls(projectDir);
+        var dllPaths = binDirs.SelectMany(GetAllDlls).ToList();
         var index = new SequencePointsIndex(dllPaths);
         var report = SarifLog.Load(reportPath);
 
@@ -73,7 +104,7 @@ public class SequencePointsIndexTests
 
         _output.WriteLine($"{notFound}/{allResults.Count} locations not found");
         _output.WriteLine($"{multiple}/{allResults.Count} with multiple points");
-        
+
         Assert.Equal(expectedNotFound, notFound);
         Assert.Equal(expectedMultiple, multiple);
     }

@@ -35,4 +35,9 @@ public class PointInfo
     {
         return HashCode.Combine(Location, StartLine, StartColumn);
     }
+
+    public override string ToString()
+    {
+        return $"{StartLine} {Location}";
+    }
 }
