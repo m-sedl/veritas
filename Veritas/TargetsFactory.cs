@@ -1,4 +1,5 @@
 using Microsoft.CodeAnalysis.Sarif;
+using Serilog;
 using VSharp;
 
 namespace Veritas;
@@ -17,8 +18,11 @@ public class TargetsFactory
         { "V3106", IssueType.OutboundOfRange }
     };
 
-    public TargetsFactory(ISequencePointsIndex index)
+    private readonly ILogger _logger;
+
+    public TargetsFactory(ISequencePointsIndex index, ILogger logger)
     {
+        _logger = logger;
         _index = index;
     }
 
@@ -26,21 +30,26 @@ public class TargetsFactory
     // and sarif issues for which not founded any location
     public TargetsFactoryResult BuildTargets(SarifLog sarif)
     {
+        _logger.Information("Started building of targets for report");
         var result = new TargetsFactoryResult();
+        var viewedResults = 0;
+        var supportedResults = 0;
         foreach (var run in sarif.Runs)
         {
             foreach (var sarifResult in run.Results)
             {
+                viewedResults++;
                 if (!_supportedRules.ContainsKey(sarifResult.RuleId))
                 {
-                    //TODO need to add logging
+                    _logger.Debug($"Rule {sarifResult.RuleId} not supported, skipped");
                     continue;
                 }
 
+                supportedResults++;
                 var targets = BuildTargetsByLocations(_supportedRules[sarifResult.RuleId], sarifResult.Locations);
                 if (targets.Count == 0)
                 {
-                    // TODO need to add logging
+                    _logger.Debug($"Result ${sarifResult} does not contain any targets");
                     result.BadResults.Add(sarifResult);
                     continue;
                 }
@@ -49,6 +58,10 @@ public class TargetsFactory
             }
         }
 
+        _logger.Information($"Targets building completed. Viewed results: {viewedResults}; " +
+                            $"Supported results: {supportedResults}; " +
+                            $"Supported results without targets: {result.BadResults.Count}; " +
+                            $"Total targets: {result.Targets.Count}");
         return result;
     }
 
