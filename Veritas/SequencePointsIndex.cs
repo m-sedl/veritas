@@ -2,6 +2,7 @@ using System.Reflection;
 using Microsoft.CodeAnalysis.Sarif;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
+using Serilog;
 using VSharp;
 
 namespace Veritas;
@@ -16,8 +17,12 @@ public class SequencePointsIndex : ISequencePointsIndex
 
     private readonly VeritasAssemblyLoadContext _alc = new("veritas_alc");
 
-    public SequencePointsIndex(List<string> assemblyPaths)
+    private readonly ILogger _logger;
+
+    public SequencePointsIndex(List<string> assemblyPaths, ILogger logger)
     {
+        _logger = logger;
+        _logger.Information($"Started indexing of sequence points for {assemblyPaths.Count} assemblies");
         foreach (var path in assemblyPaths)
         {
             try
@@ -26,14 +31,14 @@ public class SequencePointsIndex : ISequencePointsIndex
             }
             catch (SymbolsNotFoundException)
             {
-                // Console.WriteLine($"Assembly {path} skipped because pdb not founded");
-                // TODO: need to add logging
+                _logger.Debug($"Assembly {path} skipped because pdb not founded");
             }
-            catch (BadImageFormatException)
+            catch (BadImageFormatException ex)
             {
-                // TODO: need to add logging
+                _logger.Debug($"Exception during assembly ({path}) indexing: {ex.Message}");
             }
         }
+        _logger.Information("Indexing completed");
     }
 
     private void IndexAssembly(string assemblyPath)
@@ -44,17 +49,7 @@ public class SequencePointsIndex : ISequencePointsIndex
             return;
         }
 
-        Assembly assembly;
-        try
-        {
-            assembly = _alc.LoadFromAssemblyPath(assemblyPath);
-        }
-        catch (BadImageFormatException)
-        {
-            //TODO add logging
-            return;
-        }
-
+        var assembly = _alc.LoadFromAssemblyPath(assemblyPath);
         var methods = assemblyDefinition.Modules
             .SelectMany(m => m.GetTypes())
             .SelectMany(t => t.Methods.Where(m => m.HasBody));

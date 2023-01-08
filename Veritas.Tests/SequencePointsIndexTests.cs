@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis.Sarif;
+using Serilog;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -87,7 +88,8 @@ public class SequencePointsIndexTests
     public void IndexingQuality(string[] binDirs, string reportPath, int expectedNotFound, int expectedMultiple)
     {
         var dllPaths = binDirs.SelectMany(GetAllDlls).ToList();
-        var index = new SequencePointsIndex(dllPaths);
+        var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+        var index = new SequencePointsIndex(dllPaths, logger);
         var report = SarifLog.Load(reportPath);
 
         var locations = report.Runs

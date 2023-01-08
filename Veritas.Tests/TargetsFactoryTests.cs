@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis.Sarif;
+using Serilog;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -87,10 +88,11 @@ public class TargetsFactoryTests
     public void BuildTargetsTest(string[] binDirs, string reportPath, int expectedTargets, int expectedBadResults)
     {
         var dllPaths = binDirs.SelectMany(GetAllDlls).ToList();
-        var index = new SequencePointsIndex(dllPaths);
+        var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+        var index = new SequencePointsIndex(dllPaths, logger);
         var report = SarifLog.Load(reportPath);
 
-        var factory = new TargetsFactory(index);
+        var factory = new TargetsFactory(index, logger);
         var result = factory.BuildTargets(report);
         var baseBlocks = result.Targets.Count(t => t.IsBaseBlock);
 
