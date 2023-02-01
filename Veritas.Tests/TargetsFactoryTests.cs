@@ -3,11 +3,14 @@ using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis.Sarif;
 using Serilog;
+using VSharp;
 using Xunit;
 using Xunit.Abstractions;
+using Xunit.Extensions.Ordering;
 
 namespace Veritas.Tests;
 
+[Order(2)]
 public class TargetsFactoryTests
 {
     private readonly ITestOutputHelper _output;
@@ -15,6 +18,7 @@ public class TargetsFactoryTests
     public TargetsFactoryTests(ITestOutputHelper output)
     {
         _output = output;
+        AssemblyManager.Reset();
     }
 
     static IEnumerable<string> GetAllDlls(string path)

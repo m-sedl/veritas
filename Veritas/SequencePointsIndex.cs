@@ -15,8 +15,6 @@ public class SequencePointsIndex : ISequencePointsIndex
 
     private readonly HashSet<string> _processedAssemblies = new();
 
-    private readonly VeritasAssemblyLoadContext _alc = new("veritas_alc");
-
     private readonly ILogger _logger;
 
     public SequencePointsIndex(List<string> assemblyPaths, ILogger logger)
@@ -49,7 +47,7 @@ public class SequencePointsIndex : ISequencePointsIndex
             return;
         }
 
-        var assembly = _alc.LoadFromAssemblyPath(assemblyPath);
+        var assembly = AssemblyManager.LoadFromAssemblyPath(assemblyPath);
         var methods = assemblyDefinition.Modules
             .SelectMany(m => m.GetTypes())
             .SelectMany(t => t.Methods.Where(m => m.HasBody));
