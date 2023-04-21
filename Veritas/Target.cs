@@ -6,24 +6,40 @@ namespace Veritas;
 public class Target
 {
     public IssueType Issue { get; }
-
-    public bool IsBaseBlock { get; }
-
-    public codeLocation Location { get; }
+   
+    public Result Result { get; }
     
-    public Location SarifLocation { get;  }
+    public HashSet<InstructionOrBlock> Locations { get; }
 
-    public Target(IssueType issue, codeLocation location, Location sarifLocation, bool isBaseBlock = false)
+    public Target(IssueType issue, Result result, HashSet<InstructionOrBlock> locations)
     {
         Issue = issue;
-        Location = location;
-        SarifLocation = sarifLocation;
-        IsBaseBlock = isBaseBlock;
+        Result = result;
+        Locations = locations;
     }
 
-    protected bool Equals(Target other)
+    public override string ToString()
     {
-        return Issue == other.Issue && IsBaseBlock == other.IsBaseBlock && Location.Equals(other.Location);
+        var locations = string.Join("\t\n", Locations.Select(l => l.ToString()));
+        return $"{Issue}\n\t{locations}";
+    }
+}
+
+public class InstructionOrBlock
+{
+    public bool IsBasicBlock { get; }
+    
+    public codeLocation Location { get; }
+
+    public InstructionOrBlock(bool isBasicBlock, codeLocation location)
+    {
+        IsBasicBlock = isBasicBlock;
+        Location = location;
+    }
+
+    protected bool Equals(InstructionOrBlock other)
+    {
+        return IsBasicBlock == other.IsBasicBlock && Location.Equals(other.Location);
     }
 
     public override bool Equals(object? obj)
@@ -31,21 +47,18 @@ public class Target
         if (ReferenceEquals(null, obj)) return false;
         if (ReferenceEquals(this, obj)) return true;
         if (obj.GetType() != this.GetType()) return false;
-        return Equals((Target)obj);
+        return Equals((InstructionOrBlock)obj);
     }
 
     public override int GetHashCode()
     {
-        return HashCode.Combine((int)Issue, IsBaseBlock, Location);
+        return HashCode.Combine(IsBasicBlock, Location);
     }
-
+    
     public override string ToString()
     {
-        var type = IsBaseBlock ? "Base block" : "Instruction";
-        var file = SarifLocation.PhysicalLocation.ArtifactLocation.Uri.AbsolutePath;
-        var line = SarifLocation.PhysicalLocation.Region.StartLine;
-        var col = SarifLocation.PhysicalLocation.Region.StartColumn;
+        var type = IsBasicBlock ? "Basic block" : "Instruction";
         var method = Location.method.FullName;
-        return $"{Issue}\n{type} 0x{Location.offset:X}\n{method}\n{file} {line}:{col}";
+        return $"{type} {method} 0x{Location.offset:X}";
     }
 }

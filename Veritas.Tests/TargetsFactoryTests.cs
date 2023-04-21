@@ -42,7 +42,7 @@ public class TargetsFactoryTests
                 "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
             },
             "/home/msedlyarskiy/benchmark/tools/reports/pvs/litedb_LiteDB.sarif",
-            14,
+            12,
             8
         };
         yield return new object[]
@@ -98,10 +98,10 @@ public class TargetsFactoryTests
 
         var factory = new TargetsFactory(index, logger);
         var result = factory.BuildTargets(report);
-        var baseBlocks = result.Targets.Count(t => t.IsBaseBlock);
+        var baseBlocks = result.Targets.Sum(t => t.Locations.Count(l => l.IsBasicBlock));
 
         _output.WriteLine($"Targets: {result.Targets.Count}");
-        _output.WriteLine($"Bad results: {result.BadResults.Count}");
+        _output.WriteLine($"Bad results: {result.ResultsWithoutTargets.Count}");
         _output.WriteLine($"Base blocks: {baseBlocks}");
         _output.WriteLine("");
 
@@ -110,7 +110,7 @@ public class TargetsFactoryTests
             _output.WriteLine($"{t}\n-------");
         }
 
-        Assert.Equal(expectedBadResults, result.BadResults.Count);
+        Assert.Equal(expectedBadResults, result.ResultsWithoutTargets.Count);
         Assert.Equal(expectedTargets, result.Targets.Count);
     }
 }
