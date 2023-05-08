@@ -21,14 +21,6 @@ public class TargetsFactoryTests
         AssemblyManager.Reset();
     }
 
-    static IEnumerable<string> GetAllDlls(string path)
-    {
-        var dir = new DirectoryInfo(path);
-        return dir
-            .GetFiles("*.dll", SearchOption.AllDirectories)
-            .Select(f => f.FullName);
-    }
-
     public static IEnumerable<object[]> AnalyzedProjects()
     {
         yield return new object[]
@@ -91,7 +83,7 @@ public class TargetsFactoryTests
     [MemberData(nameof(AnalyzedProjects))]
     public void BuildTargetsTest(string[] binDirs, string reportPath, int expectedTargets, int expectedBadResults)
     {
-        var dllPaths = binDirs.SelectMany(GetAllDlls).ToList();
+        var dllPaths = binDirs.SelectMany(Utils.GetAllDlls).ToList();
         var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
         var index = new SequencePointsIndex(dllPaths, logger);
         var report = SarifLog.Load(reportPath);

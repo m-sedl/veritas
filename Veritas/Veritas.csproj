@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VSharp\VSharp.IL\VSharp.IL.fsproj" />
+    <ProjectReference Include="..\VSharp\VSharp.SILI\VSharp.SILI.fsproj" />
   </ItemGroup>
 
 </Project>

@@ -1,17 +1,18 @@
 using Microsoft.CodeAnalysis.Sarif;
 using VSharp;
+using VSharp.Interpreter.IL;
 
 namespace Veritas;
 
 public class Target
 {
-    public IssueType Issue { get; }
+    public hypothesisType Issue { get; }
    
     public Result Result { get; }
     
     public HashSet<InstructionOrBlock> Locations { get; }
 
-    public Target(IssueType issue, Result result, HashSet<InstructionOrBlock> locations)
+    public Target(hypothesisType issue, Result result, HashSet<InstructionOrBlock> locations)
     {
         Issue = issue;
         Result = result;

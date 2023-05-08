@@ -18,15 +18,7 @@ public class SequencePointsIndexTests
     public SequencePointsIndexTests(ITestOutputHelper output)
     {
         _output = output;
-	    AssemblyManager.Reset();
-    }
-
-    static IEnumerable<string> GetAllDlls(string path)
-    {
-        var dir = new DirectoryInfo(path);
-        return dir
-            .GetFiles("*.dll", SearchOption.AllDirectories)
-            .Select(f => f.FullName);
+	AssemblyManager.Reset();
     }
 
     public static IEnumerable<object[]> AnalyzedProjects()
@@ -91,7 +83,7 @@ public class SequencePointsIndexTests
     [MemberData(nameof(AnalyzedProjects))]
     public void IndexingQuality(string[] binDirs, string reportPath, int expectedNotFound, int expectedMultiple)
     {
-        var dllPaths = binDirs.SelectMany(GetAllDlls).ToList();
+        var dllPaths = binDirs.SelectMany(Utils.GetAllDlls).ToList();
         var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
         var index = new SequencePointsIndex(dllPaths, logger);
         var report = SarifLog.Load(reportPath);
@@ -103,6 +95,11 @@ public class SequencePointsIndexTests
         var allResults = locations.Select(loc =>
             index.FindPoints(loc)
         ).ToList();
+
+        var loc = allResults[0][0].Location;
+        var point = index.FindPoint(loc);
+        Assert.NotNull(point);
+        Assert.Equal(loc, point.Location);
 
         allResults.ForEach(Assert.NotNull);
         var notFound = allResults.Count(r => r.Count == 0);

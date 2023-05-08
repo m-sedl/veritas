@@ -1,6 +1,8 @@
+
 using Microsoft.CodeAnalysis.Sarif;
 using Serilog;
 using VSharp;
+using VSharp.Interpreter.IL;
 
 namespace Veritas;
 
@@ -8,14 +10,14 @@ public class TargetsFactory
 {
     private readonly ISequencePointsIndex _index;
 
-    private readonly Dictionary<string, IssueType> _supportedRules = new()
+    private readonly Dictionary<string, hypothesisType> _supportedRules = new()
     {
         // https://pvs-studio.com/en/docs/warnings/v3080/
-        { "V3080", IssueType.NullDereference },
+        { "V3080", hypothesisType.NullDereference },
         // https://pvs-studio.com/en/docs/warnings/v3146/
-        { "V3146", IssueType.NullDereference },
+        { "V3146", hypothesisType.NullDereference },
         // https://pvs-studio.com/en/docs/warnings/v3106/
-        { "V3106", IssueType.OutboundOfRange }
+        { "V3106", hypothesisType.IndexOutOfRange }
     };
 
     private readonly ILogger _logger;

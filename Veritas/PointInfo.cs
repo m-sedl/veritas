@@ -7,6 +7,8 @@ public class PointInfo
 {
     public codeLocation Location { get; }
 
+    public string FileName { get; }
+
     public int StartLine { get; }
 
     public int StartColumn { get; }
@@ -14,6 +16,7 @@ public class PointInfo
     public PointInfo(SequencePoint point, Method method)
     {
         Location = new codeLocation(point.Offset, method);
+        FileName = point.Document.Url;
         StartLine = point.StartLine;
         StartColumn = point.StartColumn;
     }
