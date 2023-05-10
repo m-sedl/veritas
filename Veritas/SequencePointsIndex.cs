@@ -11,6 +11,8 @@ public class SequencePointsIndex : ISequencePointsIndex
 {
     private readonly Dictionary<string, HashSet<PointInfo>> _index = new();
 
+    private readonly Dictionary<Method, List<PointInfo>> _reverseIndex = new();
+
     private readonly ReaderParameters _readerParameters = new() { ReadSymbols = true };
 
     private readonly HashSet<string> _processedAssemblies = new();
@@ -63,13 +65,21 @@ public class SequencePointsIndex : ISequencePointsIndex
             var ps = m.DebugInformation.SequencePoints;
             var token = m.MetadataToken.ToInt32();
             var vsMethod = FindMethod(assembly, token);
+
+            if (!_reverseIndex.ContainsKey(vsMethod))
+            {
+                _reverseIndex[vsMethod] = new List<PointInfo>();
+            }
+
             foreach (var p in ps.Where(p => !p.IsHidden))
             {
                 if (!_index.ContainsKey(p.Document.Url))
                 {
                     _index[p.Document.Url] = new HashSet<PointInfo>();
                 }
-                _index[p.Document.Url].Add(new PointInfo(p, vsMethod));
+                var point = new PointInfo(p, vsMethod);
+                _index[p.Document.Url].Add(point);
+                _reverseIndex[vsMethod].Add(point);
             }
         }
     }
@@ -101,5 +111,12 @@ public class SequencePointsIndex : ISequencePointsIndex
         var startLine = location.Region.StartLine;
         var sf = _index[sourceFilePath];
         return sf.Where(sp => sp.StartLine == startLine).ToList();
+    }
+
+    public PointInfo? FindPoint(codeLocation location) 
+    {
+        var methodPoints = _reverseIndex.GetValueOrDefault(location.method);
+        if (methodPoints == null) return null;
+        return methodPoints.Last(p => p.Location.offset <= location.offset);
     }
 }

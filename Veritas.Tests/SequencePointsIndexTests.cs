@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis.Sarif;
 using Serilog;
@@ -18,15 +17,7 @@ public class SequencePointsIndexTests
     public SequencePointsIndexTests(ITestOutputHelper output)
     {
         _output = output;
-	    AssemblyManager.Reset();
-    }
-
-    static IEnumerable<string> GetAllDlls(string path)
-    {
-        var dir = new DirectoryInfo(path);
-        return dir
-            .GetFiles("*.dll", SearchOption.AllDirectories)
-            .Select(f => f.FullName);
+        AssemblyManager.Reset();
     }
 
     public static IEnumerable<object[]> AnalyzedProjects()
@@ -91,7 +82,7 @@ public class SequencePointsIndexTests
     [MemberData(nameof(AnalyzedProjects))]
     public void IndexingQuality(string[] binDirs, string reportPath, int expectedNotFound, int expectedMultiple)
     {
-        var dllPaths = binDirs.SelectMany(GetAllDlls).ToList();
+        var dllPaths = binDirs.SelectMany(Utils.GetAllDlls).ToList();
         var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
         var index = new SequencePointsIndex(dllPaths, logger);
         var report = SarifLog.Load(reportPath);
@@ -104,6 +95,11 @@ public class SequencePointsIndexTests
             index.FindPoints(loc)
         ).ToList();
 
+        var loc = allResults[0][0].Location;
+        var point = index.FindPoint(loc);
+        Assert.NotNull(point);
+        Assert.Equal(loc, point.Location);
+
         allResults.ForEach(Assert.NotNull);
         var notFound = allResults.Count(r => r.Count == 0);
         var multiple = allResults.Count(r => r.Count > 1);
@@ -113,5 +109,32 @@ public class SequencePointsIndexTests
 
         Assert.Equal(expectedNotFound, notFound);
         Assert.Equal(expectedMultiple, multiple);
+    }
+
+    [Theory]
+    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/litedb_LiteDB.sarif")]
+    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/NLog_src_NLog.sarif")]
+    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif")]
+    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/moq4_Moq.sarif")]
+    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/nunit_nunit.sarif")]
+    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/xunit.sarif")]
+    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/AutoMapper_AutoMapper.sarif")]
+    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/spbu-homeworks-1_Semester2_Homework8_BTree_BTree.sarif")]
+    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/ILSpy.sarif")]
+    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/OpenRA.sarif")]
+    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/Newtonsoft.Json_Src_Newtonsoft.Json.sarif")]
+    public void LoadSarif(string path)
+    {
+        var report = SarifLog.Load(path);
+        var v3080 = report.Runs.SelectMany(run => run.Results).Count(sarifResult => sarifResult.RuleId == "V3080");
+        var v3146 = report.Runs.SelectMany(run => run.Results).Count(sarifResult => sarifResult.RuleId == "V3146");
+        var v3106 = report.Runs.SelectMany(run => run.Results).Count(sarifResult => sarifResult.RuleId == "V3106");
+        var v3022 = report.Runs.SelectMany(run => run.Results).Count(sarifResult => sarifResult.RuleId == "V3022");
+        _output.WriteLine(path.Split("/").Last());
+        _output.WriteLine($"V3022: {v3022}");
+        _output.WriteLine($"V3080: {v3080}");
+        _output.WriteLine($"V3146: {v3146}");
+        _output.WriteLine($"V3106: {v3106}");
+        _output.WriteLine($"Total: {report.Runs.SelectMany(run => run.Results).Count()}");
     }
 }

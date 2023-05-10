@@ -17,6 +17,12 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "VSharp.InternalCalls", "VSh
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "VSharp.SILI.Core", "VSharp\VSharp.SILI.Core\VSharp.SILI.Core.fsproj", "{6D8035D7-631A-4708-9399-8BDA28A11A57}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "VSharp.SILI", "VSharp\VSharp.SILI\VSharp.SILI.fsproj", "{A2D16FE4-D200-4B02-A584-52C4CFD9DE7B}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "VSharp.Solver", "VSharp\VSharp.Solver\VSharp.Solver.fsproj", "{675A47C4-66D8-4E3C-83C7-CA27BE64C590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSharp.API", "VSharp\VSharp.API\VSharp.API.csproj", "{40301B06-EBC3-4D2C-AA81-96B7C2609E1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +60,17 @@ Global
 		{6D8035D7-631A-4708-9399-8BDA28A11A57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D8035D7-631A-4708-9399-8BDA28A11A57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D8035D7-631A-4708-9399-8BDA28A11A57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D16FE4-D200-4B02-A584-52C4CFD9DE7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D16FE4-D200-4B02-A584-52C4CFD9DE7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D16FE4-D200-4B02-A584-52C4CFD9DE7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D16FE4-D200-4B02-A584-52C4CFD9DE7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675A47C4-66D8-4E3C-83C7-CA27BE64C590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675A47C4-66D8-4E3C-83C7-CA27BE64C590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675A47C4-66D8-4E3C-83C7-CA27BE64C590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675A47C4-66D8-4E3C-83C7-CA27BE64C590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40301B06-EBC3-4D2C-AA81-96B7C2609E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40301B06-EBC3-4D2C-AA81-96B7C2609E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40301B06-EBC3-4D2C-AA81-96B7C2609E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40301B06-EBC3-4D2C-AA81-96B7C2609E1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

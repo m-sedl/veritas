@@ -4,6 +4,6 @@ namespace Veritas;
 
 public class TargetsFactoryResult
 {
-    public HashSet<Target> Targets { get; } = new ();
-    public List<Result> BadResults { get; } = new ();
+    public List<Target> Targets { get; } = new ();
+    public List<Target> ResultsWithoutLocations { get; } = new ();
 }

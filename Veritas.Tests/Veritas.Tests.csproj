@@ -24,6 +24,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Veritas\Veritas.csproj" />
+      <ProjectReference Include="..\VSharp\VSharp.API\VSharp.API.csproj" />
+      <ProjectReference Include="..\VSharp\VSharp.SILI\VSharp.SILI.fsproj" />
     </ItemGroup>
 
 </Project>
