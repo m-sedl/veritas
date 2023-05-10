@@ -10,7 +10,7 @@ public class TargetsFactory
 {
     private readonly ISequencePointsIndex _index;
 
-    private readonly Dictionary<string, hypothesisType> _supportedRules = new()
+    private static readonly Dictionary<string, hypothesisType> SupportedRules = new()
     {
         // https://pvs-studio.com/en/docs/warnings/v3080/
         { "V3080", hypothesisType.NullDereference },
@@ -21,6 +21,13 @@ public class TargetsFactory
     };
 
     private readonly ILogger _logger;
+
+    public static int GetSupportedResultsCount(SarifLog sarif)
+    {
+        return sarif
+            .Runs.SelectMany(run => run.Results)
+            .Count(sarifResult => SupportedRules.ContainsKey(sarifResult.RuleId));
+    }
 
     public TargetsFactory(ISequencePointsIndex index, ILogger logger)
     {
@@ -41,7 +48,7 @@ public class TargetsFactory
             foreach (var sarifResult in run.Results)
             {
                 viewedResults++;
-                if (!_supportedRules.ContainsKey(sarifResult.RuleId))
+                if (!SupportedRules.ContainsKey(sarifResult.RuleId))
                 {
                     _logger.Debug($"Rule {sarifResult.RuleId} not supported, skipped");
                     continue;
@@ -53,7 +60,7 @@ public class TargetsFactory
                 {
                     _logger.Debug($"The result ${sarifResult} could not be mapped to the target: " +
                                   $"no locations found in the code");
-                    result.ResultsWithoutTargets.Add(sarifResult);
+                    result.ResultsWithoutLocations.Add(target);
                     continue;
                 }
 
@@ -63,7 +70,7 @@ public class TargetsFactory
 
         _logger.Information($"Targets building completed. Viewed results: {viewedResults}; " +
                             $"Supported results: {supportedResults}; " +
-                            $"Supported results without targets: {result.ResultsWithoutTargets.Count}; " +
+                            $"Supported results without targets: {result.ResultsWithoutLocations.Count}; " +
                             $"Total targets: {result.Targets.Count}");
         return result;
     }
@@ -92,7 +99,7 @@ public class TargetsFactory
             }
         }
 
-        return new Target(_supportedRules[sarifResult.RuleId], sarifResult, locationsOrBlocks);
+        return new Target(SupportedRules[sarifResult.RuleId], sarifResult, locationsOrBlocks);
     }
 
     private IEnumerable<codeLocation> ResolveBasicBlocks(List<PointInfo> points)

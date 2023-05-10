@@ -1,20 +1,21 @@
-using VSharp.Core;
 using VSharp.Interpreter.IL;
 
 namespace Veritas;
 
-public class ExceptionInfo 
+public class ExceptionInfo
 {
-    public Type Type { get;}
+    public Type Type { get; }
 
     public List<PointInfo> StackTrace { get; } = new();
 
-    public ExceptionInfo(ISequencePointsIndex index, exceptionInfo info) {
+    public ExceptionInfo(ISequencePointsIndex index, exceptionInfo info)
+    {
         Type = info.exceptionType;
         StackTrace = new List<PointInfo>(info.stackTrace.Count());
-        foreach (var cl in info.stackTrace) {
+        foreach (var cl in info.stackTrace)
+        {
             var p = index.FindPoint(cl);
-            if (p != null) 
+            if (p != null)
             {
                 StackTrace.Add(p);
             }
@@ -22,19 +23,16 @@ public class ExceptionInfo
     }
 }
 
-public class ExceptionProcessor 
+public class ExceptionProcessor
 {
-    private List<Target> _targets;
-
     private List<ExceptionInfo> _exceptions;
 
-    public ExceptionProcessor(ISequencePointsIndex index, List<Target> targets, IEnumerable<exceptionInfo> exceptions) 
+    public ExceptionProcessor(ISequencePointsIndex index, IEnumerable<exceptionInfo> exceptions)
     {
-        _targets = targets;
         _exceptions = exceptions.Select(e => new ExceptionInfo(index, e)).ToList();
     }
 
-    private bool TargetHasExceptionType(Target target, ExceptionInfo ex) 
+    private bool TargetHasExceptionType(Target target, ExceptionInfo ex)
     {
         if (target.Issue == hypothesisType.NullDereference)
         {
@@ -49,21 +47,23 @@ public class ExceptionProcessor
         return false;
     }
 
-    public Dictionary<Target, List<ExceptionInfo>> GetProvedTargets() {
+    public Dictionary<Target, List<ExceptionInfo>> GetProvedTargets(List<Target> targets)
+    {
         var result = new Dictionary<Target, List<ExceptionInfo>>();
-        foreach (var t in _targets) 
+        foreach (var t in targets)
         {
             var loc = t.Result.Locations[0].PhysicalLocation;
             var file = loc.ArtifactLocation.Uri.AbsolutePath;
             var line = loc.Region.StartLine;
 
-            foreach (var e in _exceptions) 
+            foreach (var e in _exceptions)
             {
                 var stackTraceHasTarget = e.StackTrace.Any(l => l.FileName == file && l.StartLine == line);
                 var targetHasExceptionType = TargetHasExceptionType(t, e);
 
-                if (targetHasExceptionType && stackTraceHasTarget) {
-                    if (!result.ContainsKey(t)) 
+                if (targetHasExceptionType && stackTraceHasTarget)
+                {
+                    if (!result.ContainsKey(t))
                     {
                         result[t] = new List<ExceptionInfo>();
                     }

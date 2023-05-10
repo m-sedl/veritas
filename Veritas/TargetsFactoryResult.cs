@@ -5,5 +5,5 @@ namespace Veritas;
 public class TargetsFactoryResult
 {
     public List<Target> Targets { get; } = new ();
-    public List<Result> ResultsWithoutTargets { get; } = new ();
+    public List<Target> ResultsWithoutLocations { get; } = new ();
 }
