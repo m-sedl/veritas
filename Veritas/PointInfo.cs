@@ -13,17 +13,25 @@ public class PointInfo
 
     public int StartColumn { get; }
 
+    public int EndLine { get; }
+
+    public int EndColumn { get; }
+
     public PointInfo(SequencePoint point, Method method)
     {
         Location = new codeLocation(point.Offset, method);
         FileName = point.Document.Url;
         StartLine = point.StartLine;
         StartColumn = point.StartColumn;
+        EndLine = point.EndLine;
+        EndColumn = point.EndColumn;
     }
 
     protected bool Equals(PointInfo other)
     {
-        return Location.Equals(other.Location) && StartLine == other.StartLine && StartColumn == other.StartColumn;
+        return Location.Equals(other.Location) 
+        && StartLine == other.StartLine && StartColumn == other.StartColumn 
+        && EndLine == other.EndLine && EndColumn == other.EndColumn;
     }
 
     public override bool Equals(object? obj)
@@ -36,11 +44,11 @@ public class PointInfo
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(Location, StartLine, StartColumn);
+        return HashCode.Combine(Location, StartLine, StartColumn, EndLine, EndColumn);
     }
 
     public override string ToString()
     {
-        return $"{StartLine} {Location}";
+        return $"{StartLine}:{StartColumn}--{EndLine}{EndColumn} {Location}";
     }
 }

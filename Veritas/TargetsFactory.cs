@@ -77,38 +77,16 @@ public class TargetsFactory
 
     private Target BuildTargetByResult(Result sarifResult)
     {
-        // now we can usually get targets for only half of the locations
-        var locationsOrBlocks = new HashSet<InstructionOrBlock>(sarifResult.Locations.Count / 2);
+        var locationsOrBlocks = new HashSet<InstructionOrBlock>(sarifResult.Locations.Count);
         foreach (var l in sarifResult.Locations)
         {
             var points = _index.FindPoints(l.PhysicalLocation);
-            switch (points.Count)
+            foreach (var p in points)
             {
-                case 0:
-                    continue;
-                case 1:
-                    locationsOrBlocks.Add(new InstructionOrBlock(false, points[0].Location));
-                    break;
-                default:
-                    var blocks = ResolveBasicBlocks(points);
-                    foreach (var block in blocks)
-                    {
-                        locationsOrBlocks.Add(new InstructionOrBlock(true, block));
-                    }
-                    break;
+                locationsOrBlocks.Add(new InstructionOrBlock(false, p.Location));
             }
         }
 
         return new Target(SupportedRules[sarifResult.RuleId], sarifResult, locationsOrBlocks);
-    }
-
-    private IEnumerable<codeLocation> ResolveBasicBlocks(List<PointInfo> points)
-    {
-        return points.Select(p =>
-        {
-            var method = p.Location.method;
-            var offset = method.ForceCFG.ResolveBasicBlock(p.Location.offset);
-            return new codeLocation(offset, method);
-        });
     }
 }

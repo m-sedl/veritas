@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Microsoft.CodeAnalysis.Sarif;
 using Serilog;
 using VSharp;
@@ -26,55 +28,55 @@ public class SequencePointsIndexTests
         {
             new[]
             {
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Tests/bin/Debug/net6.0/linux-x64/publish/",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Client/bin/Debug/netstandard2.1/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Common/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/Plugins/BTCPayServer.Plugins.Custodians.FakeCustodian/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Plugins.Test/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Abstractions/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.PluginPacker/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Data/bin/Debug/net6.0/linux-x64/publish",
-                "/home/msedlyarskiy/benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Tests/bin/Debug/net6.0/linux-x64/publish/",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Client/bin/Debug/netstandard2.1/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Common/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/Plugins/BTCPayServer.Plugins.Custodians.FakeCustodian/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Plugins.Test/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Abstractions/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.PluginPacker/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Data/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
             },
-            "/home/msedlyarskiy/benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif",
-            155,
-            4
+            "../../../../../benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif",
+            31,
+            341
         };
         yield return new object[]
         {
             new[]
             {
-                "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Stress/bin/Debug/netcoreapp3.1/publish",
-                "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Tests/bin/Debug/netcoreapp3.1/publish",
-                "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Benchmarks/bin/Debug/netcoreapp3.1/publish",
-                "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB/bin/Debug/netstandard2.0/publish",
-                "/home/msedlyarskiy/benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
+                "../../../../../benchmark/projects/litedb/LiteDB.Stress/bin/Debug/netcoreapp3.1/publish",
+                "../../../../../benchmark/projects/litedb/LiteDB.Tests/bin/Debug/netcoreapp3.1/publish",
+                "../../../../../benchmark/projects/litedb/LiteDB.Benchmarks/bin/Debug/netcoreapp3.1/publish",
+                "../../../../../benchmark/projects/litedb/LiteDB/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
             },
-            "/home/msedlyarskiy/benchmark/tools/reports/pvs/litedb_LiteDB.sarif",
-            51,
-            3
+            "../../../../../benchmark/tools/reports/pvs/litedb_LiteDB.sarif",
+            1,
+            109
         };
         yield return new object[]
         {
             new[]
             {
-                "/home/msedlyarskiy/benchmark/projects/NLog/src/NLog.Database/bin/Debug/netstandard2.0/publish",
-                "/home/msedlyarskiy/benchmark/projects/NLog/src/NLog/bin/Debug/netstandard2.0/publish",
-                "/home/msedlyarskiy/benchmark/projects/NLog/src/NLog.WindowsEventLog/bin/Debug/netstandard2.0/publish",
-                "/home/msedlyarskiy/benchmark/projects/NLog/src/NLog.OutputDebugString/bin/Debug/netstandard2.0/publish",
-                "/home/msedlyarskiy/benchmark/projects/NLog/src/NLog.WindowsRegistry/bin/Debug/netstandard2.0/publish",
-                "/home/msedlyarskiy/benchmark/projects/NLog/tests/NLog.WindowsRegistry.Tests/bin/Debug/netcoreapp3.1/publish",
-                "/home/msedlyarskiy/benchmark/projects/NLog/tests/NLogAutoLoadExtension/bin/Debug/netstandard2.0/publish",
-                "/home/msedlyarskiy/benchmark/projects/NLog/tests/SampleExtensions/bin/Debug/netstandard2.0/publish",
-                "/home/msedlyarskiy/benchmark/projects/NLog/tests/NLog.UnitTests/bin/Debug/netcoreapp3.1/publish",
-                "/home/msedlyarskiy/benchmark/projects/NLog/tests/NLog.Database.Tests/bin/Debug/netcoreapp3.1/publish",
-                "/home/msedlyarskiy/benchmark/projects/NLog/tests/ManuallyLoadedExtension/bin/Debug/netstandard2.0/publish",
-                "/home/msedlyarskiy/benchmark/projects/NLog/tests/PackageLoaderTestAssembly/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/NLog/src/NLog.Database/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/NLog/src/NLog/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/NLog/src/NLog.WindowsEventLog/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/NLog/src/NLog.OutputDebugString/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/NLog/src/NLog.WindowsRegistry/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/NLog/tests/NLog.WindowsRegistry.Tests/bin/Debug/netcoreapp3.1/publish",
+                "../../../../../benchmark/projects/NLog/tests/NLogAutoLoadExtension/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/NLog/tests/SampleExtensions/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/NLog/tests/NLog.UnitTests/bin/Debug/netcoreapp3.1/publish",
+                "../../../../../benchmark/projects/NLog/tests/NLog.Database.Tests/bin/Debug/netcoreapp3.1/publish",
+                "../../../../../benchmark/projects/NLog/tests/ManuallyLoadedExtension/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/NLog/tests/PackageLoaderTestAssembly/bin/Debug/netstandard2.0/publish",
             },
-            "/home/msedlyarskiy/benchmark/tools/reports/pvs/NLog_src_NLog.sarif",
-            59,
-            5
+            "../../../../../benchmark/tools/reports/pvs/NLog_src_NLog.sarif",
+            10,
+            152
         };
     }
 
@@ -112,17 +114,17 @@ public class SequencePointsIndexTests
     }
 
     [Theory]
-    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/litedb_LiteDB.sarif")]
-    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/NLog_src_NLog.sarif")]
-    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif")]
-    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/moq4_Moq.sarif")]
-    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/nunit_nunit.sarif")]
-    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/xunit.sarif")]
-    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/AutoMapper_AutoMapper.sarif")]
-    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/spbu-homeworks-1_Semester2_Homework8_BTree_BTree.sarif")]
-    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/ILSpy.sarif")]
-    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/OpenRA.sarif")]
-    [InlineData("/home/msedlyarskiy/benchmark/tools/reports/pvs/Newtonsoft.Json_Src_Newtonsoft.Json.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/litedb_LiteDB.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/NLog_src_NLog.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/moq4_Moq.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/nunit_nunit.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/xunit.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/AutoMapper_AutoMapper.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/spbu-homeworks-1_Semester2_Homework8_BTree_BTree.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/ILSpy.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/OpenRA.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/Newtonsoft.Json_Src_Newtonsoft.Json.sarif")]
     public void LoadSarif(string path)
     {
         var report = SarifLog.Load(path);

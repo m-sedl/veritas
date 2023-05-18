@@ -109,8 +109,9 @@ public class SequencePointsIndex : ISequencePointsIndex
         }
 
         var startLine = location.Region.StartLine;
+        var endLine = location.Region.EndLine;
         var sf = _index[sourceFilePath];
-        return sf.Where(sp => sp.StartLine == startLine).ToList();
+        return sf.Where(sp => sp.StartLine >= startLine && endLine <= sp.EndLine).ToList();
     }
 
     public PointInfo? FindPoint(codeLocation location) 
