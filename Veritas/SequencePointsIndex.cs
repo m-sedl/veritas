@@ -81,6 +81,8 @@ public class SequencePointsIndex : ISequencePointsIndex
                 _index[p.Document.Url].Add(point);
                 _reverseIndex[vsMethod].Add(point);
             }
+             //_index[p.Document.Url].OrderBy(p => p.StartLine);
+             _reverseIndex[vsMethod].OrderBy(p => p.StartLine);
         }
     }
 
@@ -111,13 +113,15 @@ public class SequencePointsIndex : ISequencePointsIndex
         var startLine = location.Region.StartLine;
         var endLine = location.Region.EndLine;
         var sf = _index[sourceFilePath];
-        return sf.Where(sp => sp.StartLine >= startLine && endLine <= sp.EndLine).ToList();
+        var sp = sf.Where(sp => sp.StartLine >= startLine && endLine <= sp.EndLine).ToList();//.MaxBy(sp => sp.EndLine);
+        return sp;// != null ? new List<PointInfo> { sp } : new List<PointInfo>();
     }
 
     public PointInfo? FindPoint(codeLocation location) 
     {
         var methodPoints = _reverseIndex.GetValueOrDefault(location.method);
         if (methodPoints == null) return null;
+
         return methodPoints.Last(p => p.Location.offset <= location.offset);
     }
 }

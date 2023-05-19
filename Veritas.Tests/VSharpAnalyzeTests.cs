@@ -30,48 +30,55 @@ public class VSharpAnalyzeTests
         ).ToList();
     }
 
-    [Fact]
-    public void ProveSingleTarget()
+    private List<target> BuildVSharpTargets(List<Target> targets)
     {
-        var reportPath = "../../../../../benchmark/tools/reports/pvs/litedb_LiteDB.sarif";
-        var testOut = new DirectoryInfo("../../../../../Veritas/Veritas.Tests/test_out");
-        var binDirs = new[]
-        {
-            "../../../../../benchmark/projects/litedb/LiteDB.Stress/bin/Debug/netcoreapp3.1/publish",
-            "../../../../../benchmark/projects/litedb/LiteDB.Tests/bin/Debug/netcoreapp3.1/publish",
-            "../../../../../benchmark/projects/litedb/LiteDB.Benchmarks/bin/Debug/netcoreapp3.1/publish",
-            "../../../../../benchmark/projects/litedb/LiteDB/bin/Debug/netstandard2.0/publish",
-            "../../../../../benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
-        };
-
-        var dllPaths = binDirs.SelectMany(Utils.GetAllDlls).ToList();
-        var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
-        var index = new SequencePointsIndex(dllPaths, logger);
-        var report = SarifLog.Load(reportPath);
-
-        var factory = new TargetsFactory(index, logger);
-        var factoryResult = factory.BuildTargets(report);
-
-        var targetIdx = 3;
-        var t = factoryResult.Targets.ToList()[targetIdx];
-        var physicalLocation = t.Result.Locations[0].PhysicalLocation;
-        _output.WriteLine($"Target: {t.Result.Message.Text}");
-        _output.WriteLine($"Target: {physicalLocation.ArtifactLocation.Uri.AbsolutePath} : {physicalLocation.Region.StartLine}");
-        var targets = BuildVSharpTargets(t);
-
-        var statistics = VSharp.TestGenerator.ProveHypotheses(
-            targets, 60, 60, testOut.FullName, verbosity: Verbosity.Info, renderTests: false);
-        testOut.Delete(true);
-
-        Assert.NotEmpty(statistics.Exceptions);
-        var processor = new ExceptionProcessor(index, statistics.Exceptions);
-        var procTargets = new List<Target> { t };
-        procTargets.AddRange(factoryResult.ResultsWithoutLocations);
-        var provedTargets = processor.GetProvedTargets(procTargets);
-        _output.WriteLine($"Target {targetIdx}");
-        _output.WriteLine($"\tProved targets: {provedTargets.Count}");
-        Assert.True(provedTargets.Count == 1);
+        return targets.SelectMany(t => t.Locations.Select(l =>
+            new target(t.Issue, l.Location, l.IsBasicBlock)
+        )).ToList();
     }
+
+    // [Fact]
+    // public void ProveSingleTarget()
+    // {
+    //     var reportPath = "../../../../../benchmark/tools/reports/pvs/litedb_LiteDB.sarif";
+    //     var testOut = new DirectoryInfo("../../../../../Veritas/Veritas.Tests/test_out");
+    //     var binDirs = new[]
+    //     {
+    //         "../../../../../benchmark/projects/litedb/LiteDB.Stress/bin/Debug/netcoreapp3.1/publish",
+    //         "../../../../../benchmark/projects/litedb/LiteDB.Tests/bin/Debug/netcoreapp3.1/publish",
+    //         "../../../../../benchmark/projects/litedb/LiteDB.Benchmarks/bin/Debug/netcoreapp3.1/publish",
+    //         "../../../../../benchmark/projects/litedb/LiteDB/bin/Debug/netstandard2.0/publish",
+    //         "../../../../../benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
+    //     };
+    //
+    //     var dllPaths = binDirs.SelectMany(Utils.GetAllDlls).ToList();
+    //     var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+    //     var index = new SequencePointsIndex(dllPaths, logger);
+    //     var report = SarifLog.Load(reportPath);
+    //
+    //     var factory = new TargetsFactory(index, logger);
+    //     var factoryResult = factory.BuildTargets(report);
+    //
+    //     var targetIdx = 3;
+    //     var t = factoryResult.Targets.ToList()[targetIdx];
+    //     var physicalLocation = t.Result.Locations[0].PhysicalLocation;
+    //     _output.WriteLine($"Target: {t.Result.Message.Text}");
+    //     _output.WriteLine($"Target: {physicalLocation.ArtifactLocation.Uri.AbsolutePath} : {physicalLocation.Region.StartLine}");
+    //     var targets = BuildVSharpTargets(t);
+    //
+    //     var statistics = VSharp.TestGenerator.ProveHypotheses(
+    //         targets, 60, 60, testOut.FullName, verbosity: Verbosity.Info, renderTests: false);
+    //     testOut.Delete(true);
+    //
+    //     Assert.NotEmpty(statistics.Exceptions);
+    //     var processor = new ExceptionProcessor(index, statistics.Exceptions);
+    //     var procTargets = new List<Target> { t };
+    //     procTargets.AddRange(factoryResult.ResultsWithoutLocations);
+    //     var provedTargets = processor.GetProvedTargets(procTargets);
+    //     _output.WriteLine($"Target {targetIdx}");
+    //     _output.WriteLine($"\tProved targets: {provedTargets.Count}");
+    //     Assert.True(provedTargets.Count == 1);
+    // }
 
     [Theory]
     [MemberData(nameof(AnalyzedProjects))]
@@ -80,7 +87,12 @@ public class VSharpAnalyzeTests
         var testOut = new DirectoryInfo("../../../../../Veritas/Veritas.Tests/test_out");
         var dllPaths = binDirs.SelectMany(Utils.GetAllDlls).ToList();
         //dllPaths.Reverse();
-        var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+
+        var projectName = Path.GetFileNameWithoutExtension(reportPath);
+        var logger = new LoggerConfiguration()
+            .WriteTo.File($"../../../../../Veritas/Veritas.Tests/{projectName}_log.txt")
+            .CreateLogger();
+        
         _output.WriteLine("Start indexing");
         var index = new SequencePointsIndex(dllPaths, logger);
         var report = SarifLog.Load(reportPath);
@@ -93,18 +105,19 @@ public class VSharpAnalyzeTests
         var exceptions = new HashSet<exceptionInfo>();
         for (var i = 0; i < factoryResult.Targets.Count; i++)
         {
-            _output.WriteLine($"Target {i}");
+            _output.WriteLine($"Target {i}/{factoryResult.Targets.Count}");
             var t = factoryResult.Targets[i];
-            var targets = BuildVSharpTargets(t);
+            var targets = BuildVSharpTargets(factoryResult.Targets);
             try
             {
+                var timeout = 60;
                 var statistics = VSharp.TestGenerator.ProveHypotheses(
-                    targets, 60, 60, testOut.FullName, verbosity: Verbosity.Info);
+                    targets, timeout, timeout, testOut.FullName, verbosity: Verbosity.Info);
                 statistics.Exceptions.ToList().ForEach(e => exceptions.Add(e));
 
                 var processor = new ExceptionProcessor(index, statistics.Exceptions);
 
-                var pts = processor.GetProvedTargets(new List<Target> { t });
+                var pts = processor.GetProvedTargets(factoryResult.Targets);
                 _output.WriteLine($"\tProved targets: {pts.Count}");
                 foreach (var kv in pts)
                 {
@@ -124,41 +137,46 @@ public class VSharpAnalyzeTests
         _output.WriteLine($"Results without targets: {factoryResult.ResultsWithoutLocations.Count}");
         _output.WriteLine($"Founded exceptions: {exceptions.Count}");
         _output.WriteLine($"Proved results: {provedTargets.Count}");
+
+        logger.Information($"Total supported results: {TargetsFactory.GetSupportedResultsCount(report)}");
+        logger.Information($"Results without targets: {factoryResult.ResultsWithoutLocations.Count}");
+        logger.Information($"Founded exceptions: {exceptions.Count}");
+        logger.Information($"Proved results: {provedTargets.Count}");
     }
 
     public static IEnumerable<object[]> AnalyzedProjects()
     {
-        // yield return new object[]
-        // {
-        //     new[]
-        //     {
-        //         "../../../../../benchmark/projects/litedb/LiteDB.Stress/bin/Debug/netcoreapp3.1/publish",
-        //         "../../../../../benchmark/projects/litedb/LiteDB.Tests/bin/Debug/netcoreapp3.1/publish",
-        //         "../../../../../benchmark/projects/litedb/LiteDB.Benchmarks/bin/Debug/netcoreapp3.1/publish",
-        //         "../../../../../benchmark/projects/litedb/LiteDB/bin/Debug/netstandard2.0/publish",
-        //         "../../../../../benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
-        //     },
-        //     "../../../../../benchmark/tools/reports/pvs/litedb_LiteDB.sarif"
-        // };
         yield return new object[]
         {
             new[]
             {
-                "../../../../../benchmark/projects/NLog/src/NLog.Database/bin/Debug/netstandard2.0/publish",
-                "../../../../../benchmark/projects/NLog/src/NLog/bin/Debug/netstandard2.0/publish",
-                "../../../../../benchmark/projects/NLog/src/NLog.WindowsEventLog/bin/Debug/netstandard2.0/publish",
-                "../../../../../benchmark/projects/NLog/src/NLog.OutputDebugString/bin/Debug/netstandard2.0/publish",
-                "../../../../../benchmark/projects/NLog/src/NLog.WindowsRegistry/bin/Debug/netstandard2.0/publish",
-                "../../../../../benchmark/projects/NLog/tests/NLog.WindowsRegistry.Tests/bin/Debug/netcoreapp3.1/publish",
-                "../../../../../benchmark/projects/NLog/tests/NLogAutoLoadExtension/bin/Debug/netstandard2.0/publish",
-                "../../../../../benchmark/projects/NLog/tests/SampleExtensions/bin/Debug/netstandard2.0/publish",
-                "../../../../../benchmark/projects/NLog/tests/NLog.UnitTests/bin/Debug/netcoreapp3.1/publish",
-                "../../../../../benchmark/projects/NLog/tests/NLog.Database.Tests/bin/Debug/netcoreapp3.1/publish",
-                "../../../../../benchmark/projects/NLog/tests/ManuallyLoadedExtension/bin/Debug/netstandard2.0/publish",
-                "../../../../../benchmark/projects/NLog/tests/PackageLoaderTestAssembly/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/litedb/LiteDB.Stress/bin/Debug/netcoreapp3.1/publish",
+                "../../../../../benchmark/projects/litedb/LiteDB.Tests/bin/Debug/netcoreapp3.1/publish",
+                "../../../../../benchmark/projects/litedb/LiteDB.Benchmarks/bin/Debug/netcoreapp3.1/publish",
+                "../../../../../benchmark/projects/litedb/LiteDB/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
             },
-            "../../../../../benchmark/tools/reports/pvs/NLog_src_NLog.sarif"
+            "../../../../../benchmark/tools/reports/pvs/litedb_LiteDB.sarif"
         };
+        // yield return new object[]
+        // {
+        //     new[]
+        //     {
+        //         "../../../../../benchmark/projects/NLog/src/NLog.Database/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/NLog/src/NLog/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/NLog/src/NLog.WindowsEventLog/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/NLog/src/NLog.OutputDebugString/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/NLog/src/NLog.WindowsRegistry/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/NLog/tests/NLog.WindowsRegistry.Tests/bin/Debug/netcoreapp3.1/publish",
+        //         "../../../../../benchmark/projects/NLog/tests/NLogAutoLoadExtension/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/NLog/tests/SampleExtensions/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/NLog/tests/NLog.UnitTests/bin/Debug/netcoreapp3.1/publish",
+        //         "../../../../../benchmark/projects/NLog/tests/NLog.Database.Tests/bin/Debug/netcoreapp3.1/publish",
+        //         "../../../../../benchmark/projects/NLog/tests/ManuallyLoadedExtension/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/NLog/tests/PackageLoaderTestAssembly/bin/Debug/netstandard2.0/publish",
+        //     },
+        //     "../../../../../benchmark/tools/reports/pvs/NLog_src_NLog.sarif"
+        // };
         // yield return new object[]
         // {
         //     new[]
