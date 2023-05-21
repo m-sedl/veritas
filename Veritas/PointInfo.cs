@@ -21,10 +21,10 @@ public class PointInfo
     {
         Location = new codeLocation(point.Offset, method);
         FileName = point.Document.Url;
-        StartLine = point.StartLine;
-        StartColumn = point.StartColumn;
-        EndLine = point.EndLine;
-        EndColumn = point.EndColumn;
+        StartLine = point.StartLine + 1;
+        StartColumn = point.StartColumn + 1;
+        EndLine = point.EndLine + 1;
+        EndColumn = point.EndColumn + 1;
     }
 
     protected bool Equals(PointInfo other)
