@@ -114,7 +114,7 @@ public class SequencePointsIndex : ISequencePointsIndex
         var endLine = location.Region.EndLine;
         var sf = _index[sourceFilePath];
         var sp = sf.Where(sp => sp.StartLine >= startLine && endLine <= sp.EndLine).ToList();//.MaxBy(sp => sp.EndLine);
-        return sp;// != null ? new List<PointInfo> { sp } : new List<PointInfo>();
+        return sp;
     }
 
     public PointInfo? FindPoint(codeLocation location) 

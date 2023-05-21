@@ -1,0 +1,141 @@
+2023-05-20 12:49:19.193 +00:00 [INF] Started indexing of sequence points for 207 assemblies
+2023-05-20 12:49:22.729 +00:00 [INF] Indexing completed
+2023-05-20 12:49:22.906 +00:00 [INF] Started building of targets for report
+2023-05-20 12:49:22.912 +00:00 [INF] Targets building completed. Viewed results: 267; Supported results: 46; Supported results without targets: 0; Total targets: 46
+2023-05-20 12:49:22.912 +00:00 [INF] Start ProveHypotheses
+2023-05-20 12:49:22.912 +00:00 [INF] Target 0/46
+2023-05-20 12:49:43.693 +00:00 [INF] reproducing errors...
+2023-05-20 12:49:43.790 +00:00 [INF] new exceptions added: 1
+2023-05-20 12:49:43.790 +00:00 [INF] Target 1/46
+2023-05-20 12:50:43.824 +00:00 [INF] reproducing errors...
+2023-05-20 12:50:43.853 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 209
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 180
+2023-05-20 12:50:43.856 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:50:43.856 +00:00 [INF] Target 2/46
+2023-05-20 12:50:50.386 +00:00 [INF] reproducing errors...
+2023-05-20 12:50:50.397 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 209
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 180
+2023-05-20 12:50:50.399 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:50:50.399 +00:00 [INF] Target 3/46
+2023-05-20 12:50:53.698 +00:00 [INF] reproducing errors...
+2023-05-20 12:50:53.699 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:50:53.699 +00:00 [INF] Target 4/46
+2023-05-20 12:50:56.971 +00:00 [INF] reproducing errors...
+2023-05-20 12:50:56.972 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:50:56.972 +00:00 [INF] Target 5/46
+2023-05-20 12:51:00.206 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:00.207 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:00.207 +00:00 [INF] Target 6/46
+2023-05-20 12:51:03.481 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:03.488 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:03.488 +00:00 [INF] Target 7/46
+2023-05-20 12:51:06.743 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:06.744 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:06.744 +00:00 [INF] Target 8/46
+2023-05-20 12:51:10.021 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:10.024 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:10.024 +00:00 [INF] Target 9/46
+2023-05-20 12:51:13.234 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:13.235 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:13.235 +00:00 [INF] Target 10/46
+2023-05-20 12:51:16.456 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:16.458 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:16.458 +00:00 [INF] Target 11/46
+2023-05-20 12:51:19.765 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:19.768 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:19.768 +00:00 [INF] Target 12/46
+2023-05-20 12:51:23.029 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:23.030 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:23.030 +00:00 [INF] Target 13/46
+2023-05-20 12:51:26.201 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:26.204 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:26.204 +00:00 [INF] Target 14/46
+2023-05-20 12:51:29.377 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:29.378 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:29.378 +00:00 [INF] Target 15/46
+2023-05-20 12:51:32.562 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:32.563 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:32.563 +00:00 [INF] Target 16/46
+2023-05-20 12:51:32.636 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:32.636 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:32.636 +00:00 [INF] Target 17/46
+2023-05-20 12:51:32.705 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:32.706 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:32.706 +00:00 [INF] Target 18/46
+2023-05-20 12:51:32.777 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:32.778 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:32.778 +00:00 [INF] Target 19/46
+2023-05-20 12:51:32.840 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:32.840 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:32.840 +00:00 [INF] Target 20/46
+2023-05-20 12:51:32.908 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:32.908 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:32.908 +00:00 [INF] Target 21/46
+2023-05-20 12:51:32.971 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:32.972 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:32.973 +00:00 [INF] Target 22/46
+2023-05-20 12:51:33.042 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:33.043 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:33.043 +00:00 [INF] Target 23/46
+2023-05-20 12:51:33.107 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:33.108 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:33.108 +00:00 [INF] Target 24/46
+2023-05-20 12:51:33.166 +00:00 [INF] reproducing errors...
+2023-05-20 12:51:33.167 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:51:33.167 +00:00 [INF] Target 25/46
+2023-05-20 12:53:03.176 +00:00 [INF] reproducing errors...
+2023-05-20 12:53:03.188 +00:00 [INF] new exceptions added: 3
+2023-05-20 12:53:03.188 +00:00 [INF] Target 26/46
+2023-05-20 12:54:33.236 +00:00 [INF] reproducing errors...
+2023-05-20 12:54:33.239 +00:00 [WRN] Founded inner exception with unexpected type: System.ArgumentNullException
+2023-05-20 12:54:33.245 +00:00 [WRN] Founded inner exception with unexpected type: System.InvalidOperationException
+2023-05-20 12:54:33.246 +00:00 [INF] new exceptions added: 1
+2023-05-20 12:54:33.246 +00:00 [INF] Target 27/46
+2023-05-20 12:56:03.254 +00:00 [INF] reproducing errors...
+2023-05-20 12:56:03.257 +00:00 [WRN] Founded inner exception with unexpected type: System.ArgumentNullException
+2023-05-20 12:56:03.264 +00:00 [WRN] Founded inner exception with unexpected type: System.InvalidOperationException
+2023-05-20 12:56:03.266 +00:00 [INF] new exceptions added: 1
+2023-05-20 12:56:03.266 +00:00 [INF] Target 28/46
+2023-05-20 12:56:55.729 +00:00 [INF] reproducing errors...
+2023-05-20 12:56:55.746 +00:00 [WRN] Founded inner exception with unexpected type: System.InvalidOperationException
+2023-05-20 12:56:55.757 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 209
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 180
+2023-05-20 12:56:55.760 +00:00 [INF] new exceptions added: 5
+2023-05-20 12:56:55.760 +00:00 [INF] Target 29/46
+2023-05-20 12:57:55.768 +00:00 [INF] reproducing errors...
+2023-05-20 12:57:55.779 +00:00 [WRN] Founded inner exception with unexpected type: System.InvalidOperationException
+2023-05-20 12:57:55.789 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 209
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 180
+2023-05-20 12:57:55.792 +00:00 [INF] new exceptions added: 5
+2023-05-20 12:57:55.792 +00:00 [INF] Target 30/46
+2023-05-20 12:58:43.856 +00:00 [INF] reproducing errors...
+2023-05-20 12:58:43.859 +00:00 [WRN] Founded inner exception with unexpected type: System.NullReferenceException
+2023-05-20 12:58:43.890 +00:00 [INF] new exceptions added: 9
+2023-05-20 12:58:43.890 +00:00 [INF] Target 31/46
+2023-05-20 12:59:44.758 +00:00 [INF] reproducing errors...
+2023-05-20 12:59:44.762 +00:00 [WRN] Founded inner exception with unexpected type: System.NullReferenceException
+2023-05-20 12:59:44.780 +00:00 [INF] new exceptions added: 9
+2023-05-20 12:59:44.780 +00:00 [INF] Target 32/46
+2023-05-20 13:00:32.865 +00:00 [INF] reproducing errors...
+2023-05-20 13:00:32.869 +00:00 [WRN] Founded inner exception with unexpected type: System.NullReferenceException
+2023-05-20 13:00:32.886 +00:00 [INF] new exceptions added: 9
+2023-05-20 13:00:32.887 +00:00 [INF] Target 33/46
+2023-05-20 13:01:20.974 +00:00 [INF] reproducing errors...
+2023-05-20 13:01:20.978 +00:00 [WRN] Founded inner exception with unexpected type: System.NullReferenceException
+2023-05-20 13:01:20.996 +00:00 [INF] new exceptions added: 9
+2023-05-20 13:01:20.996 +00:00 [INF] Target 34/46
+2023-05-20 13:02:09.099 +00:00 [INF] reproducing errors...
+2023-05-20 13:02:09.102 +00:00 [WRN] Founded inner exception with unexpected type: System.NullReferenceException
+2023-05-20 13:02:09.121 +00:00 [INF] new exceptions added: 8
+2023-05-20 13:02:09.121 +00:00 [INF] Target 35/46
+2023-05-20 13:02:57.183 +00:00 [INF] reproducing errors...
+2023-05-20 13:02:57.187 +00:00 [WRN] Founded inner exception with unexpected type: System.NullReferenceException
+2023-05-20 13:02:57.207 +00:00 [INF] new exceptions added: 8
+2023-05-20 13:02:57.207 +00:00 [INF] Target 36/46
+2023-05-20 13:03:57.340 +00:00 [INF] reproducing errors...
+2023-05-20 13:03:57.359 +00:00 [WRN] Founded inner exception with unexpected type: System.NullReferenceException
+2023-05-20 13:03:57.387 +00:00 [INF] new exceptions added: 9
+2023-05-20 13:03:57.388 +00:00 [INF] Target 37/46
+2023-05-20 13:04:11.571 +00:00 [INF] reproducing errors...
+2023-05-20 13:04:11.574 +00:00 [INF] new exceptions added: 0
+2023-05-20 13:04:11.574 +00:00 [INF] Target 38/46

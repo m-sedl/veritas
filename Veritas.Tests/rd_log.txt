@@ -1,0 +1,12 @@
+2023-05-20 10:50:59.107 +00:00 [INF] Started indexing of sequence points for 46 assemblies
+2023-05-20 10:51:29.443 +00:00 [INF] Started indexing of sequence points for 46 assemblies
+2023-05-20 10:53:15.470 +00:00 [INF] Started indexing of sequence points for 46 assemblies
+2023-05-20 10:53:35.037 +00:00 [INF] Started indexing of sequence points for 46 assemblies
+2023-05-20 10:54:50.647 +00:00 [INF] Started indexing of sequence points for 46 assemblies
+2023-05-20 10:56:04.946 +00:00 [INF] Started indexing of sequence points for 46 assemblies
+2023-05-20 10:57:24.878 +00:00 [INF] Started indexing of sequence points for 46 assemblies
+2023-05-20 10:58:39.147 +00:00 [INF] Started indexing of sequence points for 46 assemblies
+2023-05-20 10:59:16.844 +00:00 [INF] Started indexing of sequence points for 40 assemblies
+2023-05-20 11:00:15.268 +00:00 [INF] Started indexing of sequence points for 36 assemblies
+2023-05-20 11:00:50.846 +00:00 [INF] Started indexing of sequence points for 36 assemblies
+2023-05-20 11:23:58.641 +00:00 [INF] Started indexing of sequence points for 39 assemblies

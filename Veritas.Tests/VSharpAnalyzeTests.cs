@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
 using Microsoft.CodeAnalysis.Sarif;
 using Serilog;
 using VSharp;
@@ -17,6 +19,8 @@ public class VSharpAnalyzeTests
 {
     private readonly ITestOutputHelper _output;
 
+    private Serilog.Core.Logger _logger;
+
     public VSharpAnalyzeTests(ITestOutputHelper output)
     {
         _output = output;
@@ -30,11 +34,10 @@ public class VSharpAnalyzeTests
         ).ToList();
     }
 
-    private List<target> BuildVSharpTargets(List<Target> targets)
+    private void PrintInfo(string msg)
     {
-        return targets.SelectMany(t => t.Locations.Select(l =>
-            new target(t.Issue, l.Location, l.IsBasicBlock)
-        )).ToList();
+        _output.WriteLine(msg);
+        _logger.Information(msg);
     }
 
     // [Fact]
@@ -84,80 +87,224 @@ public class VSharpAnalyzeTests
     [MemberData(nameof(AnalyzedProjects))]
     public void ProvingQuality(string[] binDirs, string reportPath)
     {
-        var testOut = new DirectoryInfo("../../../../../Veritas/Veritas.Tests/test_out");
         var dllPaths = binDirs.SelectMany(Utils.GetAllDlls).ToList();
         //dllPaths.Reverse();
 
         var projectName = Path.GetFileNameWithoutExtension(reportPath);
-        var logger = new LoggerConfiguration()
+        _logger = new LoggerConfiguration()
             .WriteTo.File($"../../../../../Veritas/Veritas.Tests/{projectName}_log.txt")
             .CreateLogger();
-        
+
         _output.WriteLine("Start indexing");
-        var index = new SequencePointsIndex(dllPaths, logger);
+        var index = new SequencePointsIndex(dllPaths, _logger);
         var report = SarifLog.Load(reportPath);
 
-        var factory = new TargetsFactory(index, logger);
+        var factory = new TargetsFactory(index, _logger);
         var factoryResult = factory.BuildTargets(report);
 
-        _output.WriteLine("Start ProveHypotheses");
-        var provedTargets = new Dictionary<Target, List<ExceptionInfo>>();
-        var exceptions = new HashSet<exceptionInfo>();
-        for (var i = 0; i < factoryResult.Targets.Count; i++)
+        PrintInfo("Start ProveHypotheses");
+        var exceptions = new HashSet<Exception>();
+        for (var i = 0; i < factoryResult.Targets.Count - 1; i++)
         {
-            _output.WriteLine($"Target {i}/{factoryResult.Targets.Count}");
+            PrintInfo($"Target {i + 1}/{factoryResult.Targets.Count}");
             var t = factoryResult.Targets[i];
-            var targets = BuildVSharpTargets(factoryResult.Targets);
-            try
+            var oldExceptionCount = exceptions.Count;
+            FindExceptionsForTarget(t, exceptions);
+            PrintInfo($"new exceptions added: {exceptions.Count - oldExceptionCount}");
+        }
+
+        PrintInfo($"Start TryProveTargets");
+        var provedTargets = TryProveTargets(factoryResult.Targets, exceptions);
+
+        PrintInfo($"Total supported results: {TargetsFactory.GetSupportedResultsCount(report)}");
+        PrintInfo($"Results without targets: {factoryResult.ResultsWithoutLocations.Count}");
+        PrintInfo($"Founded exceptions: {exceptions.Count}");
+        PrintInfo($"Proved results: {provedTargets.Count}");
+
+
+        foreach (var kv in provedTargets) 
+        {
+            var r = kv.Key.Result;
+            PrintInfo(r.Message.Text);
+            var path = r.Locations[0].PhysicalLocation.ArtifactLocation.Uri.AbsolutePath;
+            var startLine = r.Locations[0].PhysicalLocation.Region.StartLine;
+            PrintInfo($"{path}, {startLine}");
+            PrintInfo($"Has exceptions: {kv.Value.Count}");
+
+            foreach (var ex in kv.Value) 
             {
-                var timeout = 60;
-                var statistics = VSharp.TestGenerator.ProveHypotheses(
-                    targets, timeout, timeout, testOut.FullName, verbosity: Verbosity.Info);
-                statistics.Exceptions.ToList().ForEach(e => exceptions.Add(e));
+                PrintInfo(ex.Message + "\n" + ex.StackTrace);
+                PrintInfo("-----");
+            }
+            PrintInfo("******");
+        }
 
-                var processor = new ExceptionProcessor(index, statistics.Exceptions);
+        PrintInfo("==========");
+    }
 
-                var pts = processor.GetProvedTargets(factoryResult.Targets);
-                _output.WriteLine($"\tProved targets: {pts.Count}");
-                foreach (var kv in pts)
+    private void FindExceptionsForTarget(Target t, HashSet<Exception> exceptions)
+    {
+        var testOut = new DirectoryInfo("../../../../../Veritas/Veritas.Tests/test_out");
+        var resultPath = Path.Combine(testOut.FullName, "VSharp.tests.0");
+        var timeout = 60;
+        var targets = BuildVSharpTargets(t);
+        try
+        {
+            VSharp.TestGenerator.ProveHypotheses(targets, timeout, timeout, testOut.FullName, verbosity: Verbosity.Error);
+        }
+        catch (Exception ex)
+        {
+            _output.WriteLine($"Exception caught: {ex.Message}");
+        }
+        finally
+        {
+            PrintInfo("reproducing errors...");
+            var tests = Directory.EnumerateFiles(resultPath, "*.vst").Select(p => new FileInfo(p)).ToList();
+            ReproduceErrors(tests).ForEach(e => exceptions.Add(e));
+            testOut.Delete(true);
+        }
+    }
+
+    private List<Exception> ReproduceErrors(List<FileInfo> tests)
+    {
+        var exceptions = new List<Exception>();
+        try
+        {
+            foreach (var fileInfo in tests)
+            {
+                testInfo ti;
+                using (FileStream stream = new FileStream(fileInfo.FullName, FileMode.Open, FileAccess.Read))
                 {
-                    provedTargets[kv.Key] = kv.Value;
+                    ti = UnitTest.DeserializeTestInfo(stream);
+                }
+                UnitTest test = UnitTest.DeserializeFromTestInfo(ti, false);
+                if (!test.IsError)
+                {
+                    continue;
+                }
+
+                var ex = RunAndTryCatch(test);
+                if (ex != null)
+                {
+                    exceptions.Add(ex);
                 }
             }
-            catch (Exception ex)
+        }
+        catch (Exception ex)
+        {
+            _logger.Error($"Reproducing errors failed: {ex.Message} {ex.StackTrace}");
+        }
+        return exceptions;
+    }
+
+    private Exception? RunAndTryCatch(UnitTest test)
+    {
+        var method = test.Method;
+        object[] parameters = test.Args ?? method.GetParameters()
+            .Select(t => FormatterServices.GetUninitializedObject(t.ParameterType)).ToArray();
+        var ex = test.Exception;
+
+        try
+        {
+            object result;
+            string message = test.ErrorMessage;
+            var debugAssertFailed = message != null && message.Contains("Debug.Assert failed");
+            result = method.Invoke(test.ThisArg, parameters);
+        }
+        catch (TargetInvocationException e)
+        {
+            var exceptionExpected = e.InnerException != null && e.InnerException.GetType() == ex;
+            if (exceptionExpected)
             {
-                _output.WriteLine($"Exception caught: {ex.Message}");
+                return e.InnerException;
             }
-            finally
+            else if (e.InnerException != null && ex != null)
             {
-                testOut.Delete(true);
+                _logger.Warning($"Founded inner exception with unexpected type: {e.InnerException.GetType().FullName}");
+                // maybe return e.InnerException?
             }
         }
-        _output.WriteLine($"Total supported results: {TargetsFactory.GetSupportedResultsCount(report)}");
-        _output.WriteLine($"Results without targets: {factoryResult.ResultsWithoutLocations.Count}");
-        _output.WriteLine($"Founded exceptions: {exceptions.Count}");
-        _output.WriteLine($"Proved results: {provedTargets.Count}");
+        return null;
+    }
 
-        logger.Information($"Total supported results: {TargetsFactory.GetSupportedResultsCount(report)}");
-        logger.Information($"Results without targets: {factoryResult.ResultsWithoutLocations.Count}");
-        logger.Information($"Founded exceptions: {exceptions.Count}");
-        logger.Information($"Proved results: {provedTargets.Count}");
+    private Dictionary<Target, List<Exception>> TryProveTargets(List<Target> targets, HashSet<Exception> exceptions)
+    {
+        var result = new Dictionary<Target, List<Exception>>(); 
+        foreach (var t in targets)
+        {
+            var loc = t.Result.Locations[0].PhysicalLocation;
+            var file = loc.ArtifactLocation.Uri.AbsolutePath;
+
+            var pattern1 = $"{file}:line {loc.Region.StartLine}";
+            var pattern2 = $"{file}, {loc.Region.StartLine}";
+
+            var proofs = new List<Exception>();
+            foreach (var ex in exceptions)
+            {
+                if (!ExceptionHasNeededType(t, ex) || ex.StackTrace == null) {
+                    continue;
+                }
+                if (ex.StackTrace.Contains(pattern1) || ex.StackTrace.Contains(pattern2)) {
+                    proofs.Add(ex);
+                }
+            }
+            if (proofs.Count > 0) {
+                result[t] = proofs;
+            }
+        }
+        return result;
+    }
+
+    private bool ExceptionHasNeededType(Target target, Exception ex)
+    {
+        if (target.Issue == hypothesisType.NullDereference)
+        {
+            return ex.GetType() == typeof(NullReferenceException);
+        }
+
+        if (target.Issue == hypothesisType.IndexOutOfRange)
+        {
+            return ex.GetType() == typeof(IndexOutOfRangeException);
+        }
+
+        return false;
     }
 
     public static IEnumerable<object[]> AnalyzedProjects()
     {
-        yield return new object[]
-        {
-            new[]
-            {
-                "../../../../../benchmark/projects/litedb/LiteDB.Stress/bin/Debug/netcoreapp3.1/publish",
-                "../../../../../benchmark/projects/litedb/LiteDB.Tests/bin/Debug/netcoreapp3.1/publish",
-                "../../../../../benchmark/projects/litedb/LiteDB.Benchmarks/bin/Debug/netcoreapp3.1/publish",
-                "../../../../../benchmark/projects/litedb/LiteDB/bin/Debug/netstandard2.0/publish",
-                "../../../../../benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
-            },
-            "../../../../../benchmark/tools/reports/pvs/litedb_LiteDB.sarif"
-        };
+        // yield return new object[]
+        // {
+        //     new[]
+        //     {
+        //         "../../../../../benchmark/projects/LoanExam/bin/Debug/net6.0/linux-x64/publish"
+        //     },
+        //     "../../../../../benchmark/tools/reports/pvs/loan_exam.sarif"
+        // };
+        // yield return new object[]
+        // {
+        //     new[]
+        //     {
+        //         "../../../../../benchmark/projects/rd/rd-net/Test.Lifetimes/bin/Debug/net35/linux-x64/publish",
+        //         "../../../../../benchmark/projects/rd/rd-net/Lifetimes/bin/Debug/net35/linux-x64/publish",
+        //         "../../../../../benchmark/projects/rd/rd-net/Test.Reflection.App/bin/Debug/net472/linux-x64/publish",
+        //         "../../../../../benchmark/projects/rd/rd-net/RdFramework/bin/Debug/net35/linux-x64/publish",
+        //         "../../../../../benchmark/projects/rd/rd-net/Test.RdFramework/bin/Debug/net35/linux-x64/publish",
+        //         "../../../../../benchmark/projects/rd/rd-net/RdFramework.Reflection/bin/Debug/net35/linux-x64/publish",
+        //     },
+        //     "../../../../../benchmark/tools/reports/pvs/rd.sarif"
+        // };
+        // yield return new object[]
+        // {
+        //     new[]
+        //     {
+        //         "../../../../../benchmark/projects/litedb/LiteDB.Stress/bin/Debug/netcoreapp3.1/publish",
+        //         "../../../../../benchmark/projects/litedb/LiteDB.Tests/bin/Debug/netcoreapp3.1/publish",
+        //         "../../../../../benchmark/projects/litedb/LiteDB.Benchmarks/bin/Debug/netcoreapp3.1/publish",
+        //         "../../../../../benchmark/projects/litedb/LiteDB/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
+        //     },
+        //     "../../../../../benchmark/tools/reports/pvs/litedb_LiteDB.sarif"
+        // };
         // yield return new object[]
         // {
         //     new[]
@@ -177,23 +324,23 @@ public class VSharpAnalyzeTests
         //     },
         //     "../../../../../benchmark/tools/reports/pvs/NLog_src_NLog.sarif"
         // };
-        // yield return new object[]
-        // {
-        //     new[]
-        //     {
-        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Tests/bin/Debug/net6.0/linux-x64/publish/",
-        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Client/bin/Debug/netstandard2.1/linux-x64/publish",
-        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer/bin/Debug/net6.0/linux-x64/publish",
-        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Common/bin/Debug/net6.0/linux-x64/publish",
-        //         "../../../../../benchmark/projects/btcpayserver/Plugins/BTCPayServer.Plugins.Custodians.FakeCustodian/bin/Debug/net6.0/linux-x64/publish",
-        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Plugins.Test/bin/Debug/net6.0/linux-x64/publish",
-        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Abstractions/bin/Debug/net6.0/linux-x64/publish",
-        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.PluginPacker/bin/Debug/net6.0/linux-x64/publish",
-        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Data/bin/Debug/net6.0/linux-x64/publish",
-        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
-        //     },
-        //     "../../../../../benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif"
-        // };
+        yield return new object[]
+        {
+            new[]
+            {
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Tests/bin/Debug/net6.0/linux-x64/publish/",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Client/bin/Debug/netstandard2.1/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Common/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/Plugins/BTCPayServer.Plugins.Custodians.FakeCustodian/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Plugins.Test/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Abstractions/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.PluginPacker/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Data/bin/Debug/net6.0/linux-x64/publish",
+                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
+            },
+            "../../../../../benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif"
+        };
         // yield return new object[]
         // {
         //     new[]

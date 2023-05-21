@@ -16,6 +16,12 @@ public class TargetsFactory
         { "V3080", hypothesisType.NullDereference },
         // https://pvs-studio.com/en/docs/warnings/v3146/
         { "V3146", hypothesisType.NullDereference },
+        // https://pvs-studio.com/en/docs/warnings/v3115/
+        { "V3115", hypothesisType.NullDereference },
+        // https://pvs-studio.com/en/docs/warnings/v3100/
+        { "V3100", hypothesisType.NullDereference },
+        // https://pvs-studio.com/en/docs/warnings/v3105/
+        { "V3105", hypothesisType.NullDereference },
         // https://pvs-studio.com/en/docs/warnings/v3106/
         { "V3106", hypothesisType.IndexOutOfRange }
     };
