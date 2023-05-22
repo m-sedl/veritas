@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 using Microsoft.CodeAnalysis.Sarif;
 using Serilog;
 using VSharp;
+using VSharp.Core;
 using VSharp.Interpreter.IL;
 using Xunit;
 using Xunit.Abstractions;
@@ -104,40 +105,50 @@ public class VSharpAnalyzeTests
 
         PrintInfo("Start ProveHypotheses");
         var exceptions = new HashSet<Exception>();
-        for (var i = 0; i < factoryResult.Targets.Count - 1; i++)
+        var provedTargetsCount = 0;
+        for (var i = 0; i < factoryResult.Targets.Count; i++)
         {
             PrintInfo($"Target {i + 1}/{factoryResult.Targets.Count}");
             var t = factoryResult.Targets[i];
             var oldExceptionCount = exceptions.Count;
             FindExceptionsForTarget(t, exceptions);
             PrintInfo($"new exceptions added: {exceptions.Count - oldExceptionCount}");
+
+            var provedTargets = TryProveTargets(new List<Target>{t}, exceptions);
+            PrintInfo($"Proved results: {provedTargets.Count}");
+            provedTargetsCount += provedTargets.Count;
         }
 
-        PrintInfo($"Start TryProveTargets");
-        var provedTargets = TryProveTargets(factoryResult.Targets, exceptions);
+        // PrintInfo($"Start TryProveTargets");
+        // var provedTargets = TryProveTargets(factoryResult.Targets, exceptions);
 
+        var uniqExceptions = exceptions.Select(ex => $"{ex.Message} {ex.StackTrace}").Distinct().Count();
         PrintInfo($"Total supported results: {TargetsFactory.GetSupportedResultsCount(report)}");
         PrintInfo($"Results without targets: {factoryResult.ResultsWithoutLocations.Count}");
-        PrintInfo($"Founded exceptions: {exceptions.Count}");
-        PrintInfo($"Proved results: {provedTargets.Count}");
+        PrintInfo($"Founded uniq exceptions: {uniqExceptions}");
+        PrintInfo($"Total proved results: {provedTargetsCount}");
+        
+        // foreach (var ex in exceptions) 
+        // {
+        //     PrintInfo(ex.Message + "\n" + ex.StackTrace);
+        //     PrintInfo("-----");
+        // }
+        // foreach (var kv in provedTargets) 
+        // {
+        //     var r = kv.Key.Result;
+        //     PrintInfo(r.Message.Text);
+        //     var path = r.Locations[0].PhysicalLocation.ArtifactLocation.Uri.AbsolutePath;
+        //     var startLine = r.Locations[0].PhysicalLocation.Region.StartLine;
+        //     PrintInfo($"{path}, {startLine}");
+        //     PrintInfo($"Has exceptions: {kv.Value.Count}");
 
-
-        foreach (var kv in provedTargets) 
-        {
-            var r = kv.Key.Result;
-            PrintInfo(r.Message.Text);
-            var path = r.Locations[0].PhysicalLocation.ArtifactLocation.Uri.AbsolutePath;
-            var startLine = r.Locations[0].PhysicalLocation.Region.StartLine;
-            PrintInfo($"{path}, {startLine}");
-            PrintInfo($"Has exceptions: {kv.Value.Count}");
-
-            foreach (var ex in kv.Value) 
-            {
-                PrintInfo(ex.Message + "\n" + ex.StackTrace);
-                PrintInfo("-----");
-            }
-            PrintInfo("******");
-        }
+        //     foreach (var ex in kv.Value) 
+        //     {
+        //         PrintInfo(ex.Message + "\n" + ex.StackTrace);
+        //         PrintInfo("-----");
+        //     }
+        //     PrintInfo("******");
+        // }
 
         PrintInfo("==========");
     }
@@ -146,11 +157,11 @@ public class VSharpAnalyzeTests
     {
         var testOut = new DirectoryInfo("../../../../../Veritas/Veritas.Tests/test_out");
         var resultPath = Path.Combine(testOut.FullName, "VSharp.tests.0");
-        var timeout = 60;
+        var timeout = 120;
         var targets = BuildVSharpTargets(t);
         try
         {
-            VSharp.TestGenerator.ProveHypotheses(targets, timeout, timeout, testOut.FullName, verbosity: Verbosity.Error);
+            VSharp.TestGenerator.ProveHypotheses(targets, timeout, 10, testOut.FullName, verbosity: Verbosity.Error);
         }
         catch (Exception ex)
         {
@@ -208,7 +219,6 @@ public class VSharpAnalyzeTests
         {
             object result;
             string message = test.ErrorMessage;
-            var debugAssertFailed = message != null && message.Contains("Debug.Assert failed");
             result = method.Invoke(test.ThisArg, parameters);
         }
         catch (TargetInvocationException e)
@@ -235,8 +245,8 @@ public class VSharpAnalyzeTests
             var loc = t.Result.Locations[0].PhysicalLocation;
             var file = loc.ArtifactLocation.Uri.AbsolutePath;
 
-            var pattern1 = $"{file}:line {loc.Region.StartLine}";
-            var pattern2 = $"{file}, {loc.Region.StartLine}";
+            var pattern1 = $"{file}:line {loc.Region.StartLine - 2}";
+            var pattern2 = $"{file}, {loc.Region.StartLine - 2}";
 
             var proofs = new List<Exception>();
             foreach (var ex in exceptions)
@@ -324,23 +334,23 @@ public class VSharpAnalyzeTests
         //     },
         //     "../../../../../benchmark/tools/reports/pvs/NLog_src_NLog.sarif"
         // };
-        yield return new object[]
-        {
-            new[]
-            {
-                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Tests/bin/Debug/net6.0/linux-x64/publish/",
-                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Client/bin/Debug/netstandard2.1/linux-x64/publish",
-                "../../../../../benchmark/projects/btcpayserver/BTCPayServer/bin/Debug/net6.0/linux-x64/publish",
-                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Common/bin/Debug/net6.0/linux-x64/publish",
-                "../../../../../benchmark/projects/btcpayserver/Plugins/BTCPayServer.Plugins.Custodians.FakeCustodian/bin/Debug/net6.0/linux-x64/publish",
-                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Plugins.Test/bin/Debug/net6.0/linux-x64/publish",
-                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Abstractions/bin/Debug/net6.0/linux-x64/publish",
-                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.PluginPacker/bin/Debug/net6.0/linux-x64/publish",
-                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Data/bin/Debug/net6.0/linux-x64/publish",
-                "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
-            },
-            "../../../../../benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif"
-        };
+        // yield return new object[]
+        // {
+        //     new[]
+        //     {
+        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Tests/bin/Debug/net6.0/linux-x64/publish/",
+        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Client/bin/Debug/netstandard2.1/linux-x64/publish",
+        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer/bin/Debug/net6.0/linux-x64/publish",
+        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Common/bin/Debug/net6.0/linux-x64/publish",
+        //         "../../../../../benchmark/projects/btcpayserver/Plugins/BTCPayServer.Plugins.Custodians.FakeCustodian/bin/Debug/net6.0/linux-x64/publish",
+        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Plugins.Test/bin/Debug/net6.0/linux-x64/publish",
+        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Abstractions/bin/Debug/net6.0/linux-x64/publish",
+        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.PluginPacker/bin/Debug/net6.0/linux-x64/publish",
+        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Data/bin/Debug/net6.0/linux-x64/publish",
+        //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
+        //     },
+        //     "../../../../../benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif"
+        // };
         // yield return new object[]
         // {
         //     new[]
@@ -401,22 +411,22 @@ public class VSharpAnalyzeTests
         //     {
         //         "../../../../../benchmark/projects/spbu-homeworks-1/Semester2/Homework8/BTree.Tests/bin/Debug/net5.0/publish",
         //         "../../../../../benchmark/projects/spbu-homeworks-1/Semester2/Homework8/BTree/bin/Debug/net5.0/publish"
-        //
+        
         //     },
         //     "../../../../../benchmark/tools/reports/pvs/spbu-homeworks-1_Semester2_Homework8_BTree_BTree.sarif"
         // };
-        // yield return new object[]
-        // {
-        //     new[]
-        //     {
-        //         "../../../../../benchmark/projects/ILSpy/ICSharpCode.ILSpyCmd/bin/Debug/net6.0/publish",
-        //         "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler/bin/Debug/netstandard2.0/publish",
-        //         "../../../../../benchmark/projects/ILSpy/ICSharpCode.ILSpyX/bin/Debug/net6.0/publish",
-        //         "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler.TestRunner/bin/Debug/net6.0-windows/publish",
-        //         "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler.PowerShell/bin/Debug/netstandard2.0/publish"
-        //     },
-        //     "../../../../../benchmark/tools/reports/pvs/ILSpy.sarif"
-        // };
+        yield return new object[]
+        {
+            new[]
+            {
+                "../../../../../benchmark/projects/ILSpy/ICSharpCode.ILSpyCmd/bin/Debug/net6.0/publish",
+                "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler/bin/Debug/netstandard2.0/publish",
+                "../../../../../benchmark/projects/ILSpy/ICSharpCode.ILSpyX/bin/Debug/net6.0/publish",
+                "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler.TestRunner/bin/Debug/net6.0-windows/publish",
+                "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler.PowerShell/bin/Debug/netstandard2.0/publish"
+            },
+            "../../../../../benchmark/tools/reports/pvs/ILSpy.sarif"
+        };
         // yield return new object[]
         // {
         //     new[]
