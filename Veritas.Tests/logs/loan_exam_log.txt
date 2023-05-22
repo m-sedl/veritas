@@ -1,0 +1,59 @@
+2023-05-20 11:13:32.887 +00:00 [INF] Started indexing of sequence points for 10 assemblies
+2023-05-20 11:15:20.430 +00:00 [INF] Started indexing of sequence points for 304 assemblies
+2023-05-20 11:15:21.148 +00:00 [INF] Indexing completed
+2023-05-20 11:15:21.289 +00:00 [INF] Started building of targets for report
+2023-05-20 11:15:21.291 +00:00 [INF] Targets building completed. Viewed results: 4; Supported results: 1; Supported results without targets: 0; Total targets: 1
+2023-05-20 11:15:21.292 +00:00 [INF] Start ProveHypotheses
+2023-05-20 11:15:21.292 +00:00 [INF] Target 0/1
+2023-05-20 11:15:22.274 +00:00 [INF] reproducing errors...
+2023-05-20 11:15:22.323 +00:00 [INF] new exceptions added: 1
+2023-05-20 11:15:22.324 +00:00 [INF] Start TryProveTargets
+2023-05-20 11:15:22.333 +00:00 [INF] Total supported results: 1
+2023-05-20 11:15:22.333 +00:00 [INF] Results without targets: 0
+2023-05-20 11:15:22.333 +00:00 [INF] Founded exceptions: 1
+2023-05-20 11:15:22.333 +00:00 [INF] Proved results: 1
+2023-05-20 11:15:22.333 +00:00 [INF] ==========
+2023-05-22 10:22:54.085 +00:00 [INF] Started indexing of sequence points for 304 assemblies
+2023-05-22 10:22:54.817 +00:00 [INF] Indexing completed
+2023-05-22 10:22:54.958 +00:00 [INF] Started building of targets for report
+2023-05-22 10:22:54.961 +00:00 [INF] Targets building completed. Viewed results: 4; Supported results: 1; Supported results without targets: 0; Total targets: 1
+2023-05-22 10:22:54.961 +00:00 [INF] Start ProveHypotheses
+2023-05-22 10:22:54.961 +00:00 [INF] Target 1/1
+2023-05-22 10:22:55.945 +00:00 [INF] reproducing errors...
+2023-05-22 10:22:56.075 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-22 10:22:56.077 +00:00 [INF] new exceptions added: 0
+2023-05-22 10:22:56.080 +00:00 [INF] Proved results: 0
+2023-05-22 10:22:56.081 +00:00 [INF] Total supported results: 1
+2023-05-22 10:22:56.082 +00:00 [INF] Results without targets: 0
+2023-05-22 10:22:56.082 +00:00 [INF] Founded uniq exceptions: 0
+2023-05-22 10:22:56.082 +00:00 [INF] Total proved results: 0
+2023-05-22 10:22:56.082 +00:00 [INF] ==========
+2023-05-22 10:24:19.125 +00:00 [INF] Started indexing of sequence points for 304 assemblies
+2023-05-22 10:24:19.852 +00:00 [INF] Indexing completed
+2023-05-22 10:24:19.992 +00:00 [INF] Started building of targets for report
+2023-05-22 10:24:19.994 +00:00 [INF] Targets building completed. Viewed results: 4; Supported results: 1; Supported results without targets: 0; Total targets: 1
+2023-05-22 10:24:19.995 +00:00 [INF] Start ProveHypotheses
+2023-05-22 10:24:19.995 +00:00 [INF] Target 1/1
+2023-05-22 10:24:20.996 +00:00 [INF] reproducing errors...
+2023-05-22 10:24:21.042 +00:00 [INF] new exceptions added: 1
+2023-05-22 10:24:21.051 +00:00 [INF] Proved results: 0
+2023-05-22 10:24:21.052 +00:00 [INF] Total supported results: 1
+2023-05-22 10:24:21.053 +00:00 [INF] Results without targets: 0
+2023-05-22 10:24:21.053 +00:00 [INF] Founded uniq exceptions: 1
+2023-05-22 10:24:21.053 +00:00 [INF] Total proved results: 0
+2023-05-22 10:24:21.053 +00:00 [INF] ==========
+2023-05-22 12:47:47.375 +00:00 [INF] Started indexing of sequence points for 304 assemblies
+2023-05-22 12:47:48.102 +00:00 [INF] Indexing completed
+2023-05-22 12:47:48.242 +00:00 [INF] Started building of targets for report
+2023-05-22 12:47:48.245 +00:00 [INF] Targets building completed. Viewed results: 4; Supported results: 1; Supported results without targets: 0; Total targets: 1
+2023-05-22 12:47:48.245 +00:00 [INF] Start ProveHypotheses
+2023-05-22 12:47:48.245 +00:00 [INF] Target 1/1
+2023-05-22 12:47:49.236 +00:00 [INF] reproducing errors...
+2023-05-22 12:47:49.283 +00:00 [INF] new exceptions added: 1
+2023-05-22 12:47:49.292 +00:00 [INF] Proved results: 0
+2023-05-22 12:47:49.293 +00:00 [INF] Total supported results: 1
+2023-05-22 12:47:49.293 +00:00 [INF] Results without targets: 0
+2023-05-22 12:47:49.293 +00:00 [INF] Founded uniq exceptions: 1
+2023-05-22 12:47:49.293 +00:00 [INF] Total proved results: 0
+2023-05-22 12:47:49.293 +00:00 [INF] ==========

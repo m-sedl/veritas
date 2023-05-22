@@ -1,0 +1,90 @@
+2023-05-21 21:27:34.753 +00:00 [INF] Started indexing of sequence points for 326 assemblies
+2023-05-21 21:27:44.709 +00:00 [INF] Indexing completed
+2023-05-21 21:27:44.853 +00:00 [INF] Started building of targets for report
+2023-05-21 21:27:44.857 +00:00 [INF] Targets building completed. Viewed results: 131; Supported results: 11; Supported results without targets: 1; Total targets: 10
+2023-05-21 21:27:44.857 +00:00 [INF] Start ProveHypotheses
+2023-05-21 21:27:44.857 +00:00 [INF] Target 1/10
+2023-05-21 21:27:50.488 +00:00 [INF] reproducing errors...
+2023-05-21 21:27:50.533 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 21:27:50.534 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:27:50.538 +00:00 [INF] Proved results: 0
+2023-05-21 21:27:50.538 +00:00 [INF] Target 2/10
+2023-05-21 21:28:34.851 +00:00 [INF] Started indexing of sequence points for 326 assemblies
+2023-05-21 21:28:40.717 +00:00 [INF] Indexing completed
+2023-05-21 21:28:40.855 +00:00 [INF] Started building of targets for report
+2023-05-21 21:28:40.858 +00:00 [INF] Targets building completed. Viewed results: 131; Supported results: 11; Supported results without targets: 1; Total targets: 10
+2023-05-21 21:28:40.858 +00:00 [INF] Start ProveHypotheses
+2023-05-21 21:28:40.858 +00:00 [INF] Target 1/10
+2023-05-21 21:28:46.583 +00:00 [INF] reproducing errors...
+2023-05-21 21:28:46.635 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 21:28:46.637 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:28:46.640 +00:00 [INF] Proved results: 0
+2023-05-21 21:28:46.640 +00:00 [INF] Target 2/10
+2023-05-21 21:29:32.323 +00:00 [INF] Started indexing of sequence points for 326 assemblies
+2023-05-21 21:29:38.166 +00:00 [INF] Indexing completed
+2023-05-21 21:29:38.323 +00:00 [INF] Started building of targets for report
+2023-05-21 21:29:38.326 +00:00 [INF] Targets building completed. Viewed results: 131; Supported results: 11; Supported results without targets: 1; Total targets: 10
+2023-05-21 21:29:38.326 +00:00 [INF] Start ProveHypotheses
+2023-05-21 21:29:38.326 +00:00 [INF] Target 1/10
+2023-05-21 21:29:44.202 +00:00 [INF] reproducing errors...
+2023-05-21 21:29:44.247 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 21:29:44.248 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:29:44.252 +00:00 [INF] Proved results: 0
+2023-05-21 21:29:44.252 +00:00 [INF] Target 2/10
+2023-05-21 21:30:19.703 +00:00 [INF] Started indexing of sequence points for 326 assemblies
+2023-05-21 21:30:25.592 +00:00 [INF] Indexing completed
+2023-05-21 21:30:25.725 +00:00 [INF] Started building of targets for report
+2023-05-21 21:30:25.728 +00:00 [INF] Targets building completed. Viewed results: 131; Supported results: 11; Supported results without targets: 1; Total targets: 10
+2023-05-21 21:30:25.729 +00:00 [INF] Start ProveHypotheses
+2023-05-21 21:30:25.729 +00:00 [INF] Target 3/10
+2023-05-21 21:32:26.192 +00:00 [INF] reproducing errors...
+2023-05-21 21:32:26.255 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 21:32:26.257 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:32:26.262 +00:00 [INF] Proved results: 0
+2023-05-21 21:32:26.262 +00:00 [INF] Target 4/10
+2023-05-21 21:34:26.278 +00:00 [INF] reproducing errors...
+2023-05-21 21:34:26.284 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 21:34:26.286 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:34:26.286 +00:00 [INF] Proved results: 0
+2023-05-21 21:34:26.286 +00:00 [INF] Target 5/10
+2023-05-21 21:34:27.084 +00:00 [INF] reproducing errors...
+2023-05-21 21:34:27.087 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 21:34:27.088 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:34:27.088 +00:00 [INF] Proved results: 0
+2023-05-21 21:34:27.088 +00:00 [INF] Target 6/10
+2023-05-21 21:34:27.890 +00:00 [INF] reproducing errors...
+2023-05-21 21:34:27.892 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 21:34:27.896 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:34:27.896 +00:00 [INF] Proved results: 0
+2023-05-21 21:34:27.896 +00:00 [INF] Target 7/10
+2023-05-21 21:36:04.140 +00:00 [INF] reproducing errors...
+2023-05-21 21:36:04.141 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeTestInfo(FileStream stream) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 172
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 188
+2023-05-21 21:36:04.142 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:36:04.142 +00:00 [INF] Proved results: 0
+2023-05-21 21:36:04.142 +00:00 [INF] Target 8/10
+2023-05-21 21:37:35.944 +00:00 [INF] reproducing errors...
+2023-05-21 21:37:35.951 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 21:37:35.952 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:37:35.952 +00:00 [INF] Proved results: 0
+2023-05-21 21:37:35.952 +00:00 [INF] Target 9/10
+2023-05-21 21:37:35.968 +00:00 [INF] reproducing errors...
+2023-05-21 21:37:35.968 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:37:35.968 +00:00 [INF] Proved results: 0
+2023-05-21 21:37:35.968 +00:00 [INF] Target 10/10
+2023-05-21 21:37:35.978 +00:00 [INF] reproducing errors...
+2023-05-21 21:37:35.978 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:37:35.978 +00:00 [INF] Proved results: 0
+2023-05-21 21:37:35.979 +00:00 [INF] Total supported results: 11
+2023-05-21 21:37:35.980 +00:00 [INF] Results without targets: 1
+2023-05-21 21:37:35.980 +00:00 [INF] Founded uniq exceptions: 0
+2023-05-21 21:37:35.980 +00:00 [INF] Total proved results: 0
+2023-05-21 21:37:35.980 +00:00 [INF] ==========

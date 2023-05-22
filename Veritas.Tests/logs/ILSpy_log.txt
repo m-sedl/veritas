@@ -1,0 +1,190 @@
+2023-05-20 12:25:14.268 +00:00 [INF] Started indexing of sequence points for 49 assemblies
+2023-05-20 12:25:16.858 +00:00 [INF] Indexing completed
+2023-05-20 12:25:17.089 +00:00 [INF] Started building of targets for report
+2023-05-20 12:25:17.114 +00:00 [INF] Targets building completed. Viewed results: 828; Supported results: 151; Supported results without targets: 54; Total targets: 97
+2023-05-20 12:25:17.114 +00:00 [INF] Start ProveHypotheses
+2023-05-20 12:25:17.114 +00:00 [INF] Target 0/97
+2023-05-20 12:26:17.398 +00:00 [INF] reproducing errors...
+2023-05-20 12:26:17.466 +00:00 [WRN] Founded inner exception with unexpected type: System.NullReferenceException
+2023-05-20 12:26:17.477 +00:00 [INF] new exceptions added: 7
+2023-05-20 12:26:17.477 +00:00 [INF] Target 1/97
+2023-05-20 12:27:06.143 +00:00 [INF] reproducing errors...
+2023-05-20 12:27:06.157 +00:00 [WRN] Founded inner exception with unexpected type: Microsoft.VisualStudio.TestPlatform.TestHost.DebugAssertException
+2023-05-20 12:27:06.161 +00:00 [WRN] Founded inner exception with unexpected type: Microsoft.VisualStudio.TestPlatform.TestHost.DebugAssertException
+2023-05-20 12:27:06.161 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:27:06.161 +00:00 [INF] Target 2/97
+2023-05-20 12:27:54.223 +00:00 [INF] reproducing errors...
+2023-05-20 12:27:54.256 +00:00 [INF] new exceptions added: 7
+2023-05-20 12:27:54.256 +00:00 [INF] Target 3/97
+2023-05-20 12:28:42.318 +00:00 [INF] reproducing errors...
+2023-05-20 12:28:42.323 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 209
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 180
+2023-05-20 12:28:42.326 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:28:42.326 +00:00 [INF] Target 4/97
+2023-05-20 12:29:30.401 +00:00 [INF] reproducing errors...
+2023-05-20 12:29:30.420 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 209
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 180
+2023-05-20 12:29:30.422 +00:00 [INF] new exceptions added: 6
+2023-05-20 12:29:30.422 +00:00 [INF] Target 5/97
+2023-05-20 12:30:18.459 +00:00 [INF] reproducing errors...
+2023-05-20 12:30:18.465 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 209
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 180
+2023-05-20 12:30:18.468 +00:00 [INF] new exceptions added: 1
+2023-05-20 12:30:18.468 +00:00 [INF] Target 6/97
+2023-05-20 12:31:18.485 +00:00 [INF] reproducing errors...
+2023-05-20 12:31:18.489 +00:00 [WRN] Founded inner exception with unexpected type: System.ArgumentNullException
+2023-05-20 12:31:18.496 +00:00 [INF] new exceptions added: 9
+2023-05-20 12:31:18.496 +00:00 [INF] Target 7/97
+2023-05-20 12:32:18.522 +00:00 [INF] reproducing errors...
+2023-05-20 12:32:18.526 +00:00 [WRN] Founded inner exception with unexpected type: System.ArgumentNullException
+2023-05-20 12:32:18.534 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 209
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 180
+2023-05-20 12:32:18.536 +00:00 [INF] new exceptions added: 5
+2023-05-20 12:32:18.536 +00:00 [INF] Target 8/97
+2023-05-20 12:33:18.832 +00:00 [INF] reproducing errors...
+2023-05-20 12:33:18.841 +00:00 [INF] new exceptions added: 1
+2023-05-20 12:33:18.841 +00:00 [INF] Target 9/97
+2023-05-20 12:34:06.876 +00:00 [INF] reproducing errors...
+2023-05-20 12:34:06.877 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 209
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 180
+2023-05-20 12:34:06.878 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:34:06.878 +00:00 [INF] Target 10/97
+2023-05-20 12:34:54.937 +00:00 [INF] reproducing errors...
+2023-05-20 12:34:54.938 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 209
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 180
+2023-05-20 12:34:54.940 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:34:54.940 +00:00 [INF] Target 11/97
+2023-05-20 12:36:18.781 +00:00 [INF] reproducing errors...
+2023-05-20 12:36:18.784 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 209
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 180
+2023-05-20 12:36:18.785 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:36:18.785 +00:00 [INF] Target 12/97
+2023-05-20 12:37:48.794 +00:00 [INF] reproducing errors...
+2023-05-20 12:37:48.822 +00:00 [INF] new exceptions added: 5
+2023-05-20 12:37:48.822 +00:00 [INF] Target 13/97
+2023-05-20 12:37:51.654 +00:00 [INF] reproducing errors...
+2023-05-20 12:37:51.655 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:37:51.655 +00:00 [INF] Target 14/97
+2023-05-20 12:37:51.682 +00:00 [INF] reproducing errors...
+2023-05-20 12:37:51.683 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:37:51.683 +00:00 [INF] Target 15/97
+2023-05-20 12:37:51.695 +00:00 [INF] reproducing errors...
+2023-05-20 12:37:51.695 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:37:51.695 +00:00 [INF] Target 16/97
+2023-05-20 12:37:51.705 +00:00 [INF] reproducing errors...
+2023-05-20 12:37:51.705 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:37:51.705 +00:00 [INF] Target 17/97
+2023-05-20 12:39:18.836 +00:00 [INF] reproducing errors...
+2023-05-20 12:39:18.885 +00:00 [INF] new exceptions added: 8
+2023-05-20 12:39:18.885 +00:00 [INF] Target 18/97
+2023-05-20 12:39:18.910 +00:00 [INF] reproducing errors...
+2023-05-20 12:39:18.910 +00:00 [INF] new exceptions added: 0
+2023-05-20 12:39:18.910 +00:00 [INF] Target 19/97
+2023-05-20 12:40:18.952 +00:00 [INF] reproducing errors...
+2023-05-20 12:40:19.025 +00:00 [INF] new exceptions added: 2
+2023-05-20 12:40:19.025 +00:00 [INF] Target 20/97
+2023-05-21 21:50:50.221 +00:00 [INF] Started indexing of sequence points for 49 assemblies
+2023-05-21 21:50:51.796 +00:00 [INF] Indexing completed
+2023-05-21 21:50:51.984 +00:00 [INF] Started building of targets for report
+2023-05-21 21:50:52.008 +00:00 [INF] Targets building completed. Viewed results: 828; Supported results: 146; Supported results without targets: 53; Total targets: 93
+2023-05-21 21:50:52.009 +00:00 [INF] Start ProveHypotheses
+2023-05-21 21:50:52.009 +00:00 [INF] Target 1/93
+2023-05-21 21:52:52.312 +00:00 [INF] reproducing errors...
+2023-05-21 21:52:52.381 +00:00 [WRN] Founded inner exception with unexpected type: System.NullReferenceException
+2023-05-21 21:52:52.398 +00:00 [INF] new exceptions added: 8
+2023-05-21 21:52:52.414 +00:00 [INF] Proved results: 0
+2023-05-21 21:52:52.414 +00:00 [INF] Target 2/93
+2023-05-21 21:54:29.760 +00:00 [INF] reproducing errors...
+2023-05-21 21:54:29.767 +00:00 [WRN] Founded inner exception with unexpected type: Microsoft.VisualStudio.TestPlatform.TestHost.DebugAssertException
+2023-05-21 21:54:29.770 +00:00 [WRN] Founded inner exception with unexpected type: Microsoft.VisualStudio.TestPlatform.TestHost.DebugAssertException
+2023-05-21 21:54:29.770 +00:00 [INF] new exceptions added: 0
+2023-05-21 21:54:29.771 +00:00 [INF] Proved results: 0
+2023-05-21 21:54:29.771 +00:00 [INF] Target 3/93
+2023-05-21 21:56:27.970 +00:00 [INF] reproducing errors...
+2023-05-21 21:56:28.002 +00:00 [INF] new exceptions added: 6
+2023-05-21 21:56:28.003 +00:00 [INF] Proved results: 0
+2023-05-21 21:56:28.003 +00:00 [INF] Target 4/93
+2023-05-21 21:58:33.142 +00:00 [INF] reproducing errors...
+2023-05-21 21:58:33.159 +00:00 [WRN] Founded inner exception with unexpected type: System.NullReferenceException
+2023-05-21 21:58:33.163 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 21:58:33.166 +00:00 [INF] new exceptions added: 3
+2023-05-21 21:58:33.169 +00:00 [INF] Proved results: 0
+2023-05-21 21:58:33.169 +00:00 [INF] Target 5/93
+2023-05-21 22:00:09.260 +00:00 [INF] reproducing errors...
+2023-05-21 22:00:09.267 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 22:00:09.271 +00:00 [INF] new exceptions added: 0
+2023-05-21 22:00:09.271 +00:00 [INF] Proved results: 0
+2023-05-21 22:00:09.271 +00:00 [INF] Target 6/93
+2023-05-21 22:01:45.340 +00:00 [INF] reproducing errors...
+2023-05-21 22:01:45.347 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 22:01:45.349 +00:00 [INF] new exceptions added: 1
+2023-05-21 22:01:45.349 +00:00 [INF] Proved results: 0
+2023-05-21 22:01:45.349 +00:00 [INF] Target 7/93
+2023-05-21 22:03:45.384 +00:00 [INF] reproducing errors...
+2023-05-21 22:03:45.387 +00:00 [WRN] Founded inner exception with unexpected type: System.NullReferenceException
+2023-05-21 22:03:45.407 +00:00 [WRN] Founded inner exception with unexpected type: System.ArgumentNullException
+2023-05-21 22:03:45.417 +00:00 [INF] new exceptions added: 21
+2023-05-21 22:03:45.419 +00:00 [INF] Proved results: 0
+2023-05-21 22:03:45.419 +00:00 [INF] Target 8/93
+2023-05-21 22:05:45.448 +00:00 [INF] reproducing errors...
+2023-05-21 22:05:45.454 +00:00 [WRN] Founded inner exception with unexpected type: System.ArgumentNullException
+2023-05-21 22:05:45.470 +00:00 [INF] new exceptions added: 18
+2023-05-21 22:05:45.472 +00:00 [INF] Proved results: 0
+2023-05-21 22:05:45.472 +00:00 [INF] Target 9/93
+2023-05-21 22:07:45.512 +00:00 [INF] reproducing errors...
+2023-05-21 22:07:45.519 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 22:07:45.523 +00:00 [INF] new exceptions added: 0
+2023-05-21 22:07:45.525 +00:00 [INF] Proved results: 0
+2023-05-21 22:07:45.526 +00:00 [INF] Target 10/93
+2023-05-21 22:09:21.580 +00:00 [INF] reproducing errors...
+2023-05-21 22:09:21.581 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 22:09:21.581 +00:00 [INF] new exceptions added: 0
+2023-05-21 22:09:21.583 +00:00 [INF] Proved results: 0
+2023-05-21 22:09:21.583 +00:00 [INF] Target 11/93
+2023-05-21 22:10:57.748 +00:00 [INF] reproducing errors...
+2023-05-21 22:10:57.749 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 22:10:57.751 +00:00 [INF] new exceptions added: 0
+2023-05-21 22:10:57.752 +00:00 [INF] Proved results: 0
+2023-05-21 22:10:57.752 +00:00 [INF] Target 12/93
+2023-05-21 22:13:57.765 +00:00 [INF] reproducing errors...
+2023-05-21 22:13:57.766 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 22:13:57.767 +00:00 [INF] new exceptions added: 0
+2023-05-21 22:13:57.769 +00:00 [INF] Proved results: 0
+2023-05-21 22:13:57.769 +00:00 [INF] Target 13/93
+2023-05-21 22:17:01.699 +00:00 [INF] reproducing errors...
+2023-05-21 22:17:01.727 +00:00 [INF] new exceptions added: 5
+2023-05-21 22:17:01.728 +00:00 [INF] Proved results: 0
+2023-05-21 22:17:01.729 +00:00 [INF] Target 14/93
+2023-05-21 22:17:01.768 +00:00 [INF] reproducing errors...
+2023-05-21 22:17:01.769 +00:00 [INF] new exceptions added: 0
+2023-05-21 22:17:01.770 +00:00 [INF] Proved results: 0
+2023-05-21 22:17:01.770 +00:00 [INF] Target 15/93
+2023-05-21 22:17:01.791 +00:00 [INF] reproducing errors...
+2023-05-21 22:17:01.791 +00:00 [INF] new exceptions added: 0
+2023-05-21 22:17:01.793 +00:00 [INF] Proved results: 0
+2023-05-21 22:17:01.794 +00:00 [INF] Target 16/93
+2023-05-21 22:17:01.807 +00:00 [INF] reproducing errors...
+2023-05-21 22:17:01.807 +00:00 [INF] new exceptions added: 0
+2023-05-21 22:17:01.809 +00:00 [INF] Proved results: 0
+2023-05-21 22:17:01.809 +00:00 [INF] Target 17/93
+2023-05-21 22:17:01.832 +00:00 [INF] reproducing errors...
+2023-05-21 22:17:01.833 +00:00 [INF] new exceptions added: 0
+2023-05-21 22:17:01.834 +00:00 [INF] Proved results: 0
+2023-05-21 22:17:01.834 +00:00 [INF] Target 18/93
+2023-05-21 22:18:37.879 +00:00 [INF] reproducing errors...
+2023-05-21 22:18:37.901 +00:00 [ERR] Reproducing errors failed: Input test is incorrect    at VSharp.UnitTest.DeserializeFromTestInfo(testInfo ti, Boolean createCompactRepr) in /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/UnitTest.fs:line 210
+   at Veritas.Tests.VSharpAnalyzeTests.ReproduceErrors(List`1 tests) in /home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs:line 190
+2023-05-21 22:18:37.903 +00:00 [INF] new exceptions added: 0
+2023-05-21 22:18:37.905 +00:00 [INF] Proved results: 0
+2023-05-21 22:18:37.905 +00:00 [INF] Target 19/93
+2023-05-21 22:18:37.937 +00:00 [INF] reproducing errors...
+2023-05-21 22:18:37.937 +00:00 [INF] new exceptions added: 0
+2023-05-21 22:18:37.939 +00:00 [INF] Proved results: 0
+2023-05-21 22:18:37.939 +00:00 [INF] Target 20/93

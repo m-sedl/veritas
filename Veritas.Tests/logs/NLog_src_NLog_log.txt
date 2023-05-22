@@ -197,3 +197,153 @@
 2023-05-20 18:50:21.120 +00:00 [INF] Founded exceptions: 11
 2023-05-20 18:50:21.120 +00:00 [INF] Proved results: 0
 2023-05-20 18:50:21.120 +00:00 [INF] ==========
+2023-05-21 20:09:24.760 +00:00 [INF] Started indexing of sequence points for 424 assemblies
+2023-05-21 20:09:26.341 +00:00 [INF] Indexing completed
+2023-05-21 20:09:26.485 +00:00 [INF] Started building of targets for report
+2023-05-21 20:09:26.488 +00:00 [INF] Targets building completed. Viewed results: 163; Supported results: 10; Supported results without targets: 0; Total targets: 10
+2023-05-21 20:09:26.488 +00:00 [INF] Start ProveHypotheses
+2023-05-21 20:09:26.488 +00:00 [INF] Target 1/10
+2023-05-21 20:09:28.865 +00:00 [INF] reproducing errors...
+2023-05-21 20:09:28.867 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:09:28.871 +00:00 [INF] Proved results: 0
+2023-05-21 20:09:28.871 +00:00 [INF] Target 2/10
+2023-05-21 20:12:28.907 +00:00 [INF] reproducing errors...
+2023-05-21 20:12:28.993 +00:00 [INF] new exceptions added: 3
+2023-05-21 20:12:28.994 +00:00 [INF] Proved results: 0
+2023-05-21 20:12:28.994 +00:00 [INF] Target 3/10
+2023-05-21 20:14:25.391 +00:00 [INF] reproducing errors...
+2023-05-21 20:14:25.394 +00:00 [INF] new exceptions added: 1
+2023-05-21 20:14:25.395 +00:00 [INF] Proved results: 0
+2023-05-21 20:14:25.395 +00:00 [INF] Target 4/10
+2023-05-21 20:14:26.320 +00:00 [INF] reproducing errors...
+2023-05-21 20:14:26.321 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:14:26.322 +00:00 [INF] Proved results: 0
+2023-05-21 20:14:26.322 +00:00 [INF] Target 5/10
+2023-05-21 20:14:26.337 +00:00 [INF] reproducing errors...
+2023-05-21 20:14:26.338 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:14:26.338 +00:00 [INF] Proved results: 0
+2023-05-21 20:14:26.338 +00:00 [INF] Target 6/10
+2023-05-21 20:14:26.496 +00:00 [INF] reproducing errors...
+2023-05-21 20:14:26.496 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:14:26.497 +00:00 [INF] Proved results: 0
+2023-05-21 20:14:26.497 +00:00 [INF] Target 7/10
+2023-05-21 20:14:26.703 +00:00 [INF] reproducing errors...
+2023-05-21 20:14:26.704 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:14:26.704 +00:00 [INF] Proved results: 0
+2023-05-21 20:14:26.705 +00:00 [INF] Target 8/10
+2023-05-21 20:14:26.819 +00:00 [INF] reproducing errors...
+2023-05-21 20:14:26.820 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:14:26.820 +00:00 [INF] Proved results: 0
+2023-05-21 20:14:26.820 +00:00 [INF] Target 9/10
+2023-05-21 20:14:26.833 +00:00 [INF] reproducing errors...
+2023-05-21 20:14:26.834 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:14:26.834 +00:00 [INF] Proved results: 0
+2023-05-21 20:14:26.834 +00:00 [INF] Target 10/10
+2023-05-21 20:14:27.043 +00:00 [INF] reproducing errors...
+2023-05-21 20:14:27.044 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:14:27.044 +00:00 [INF] Proved results: 0
+2023-05-21 20:14:27.045 +00:00 [INF] Total supported results: 10
+2023-05-21 20:14:27.045 +00:00 [INF] Results without targets: 0
+2023-05-21 20:14:27.045 +00:00 [INF] Founded uniq exceptions: System.Linq.Enumerable+DistinctIterator`1[System.String]
+2023-05-21 20:14:27.045 +00:00 [INF] Total proved results: 0
+2023-05-21 20:14:27.045 +00:00 [INF] ==========
+2023-05-21 20:16:12.608 +00:00 [INF] Started indexing of sequence points for 424 assemblies
+2023-05-21 20:16:14.183 +00:00 [INF] Indexing completed
+2023-05-21 20:16:14.346 +00:00 [INF] Started building of targets for report
+2023-05-21 20:16:14.349 +00:00 [INF] Targets building completed. Viewed results: 163; Supported results: 10; Supported results without targets: 0; Total targets: 10
+2023-05-21 20:16:14.350 +00:00 [INF] Start ProveHypotheses
+2023-05-21 20:16:14.350 +00:00 [INF] Target 1/10
+2023-05-21 20:16:16.716 +00:00 [INF] reproducing errors...
+2023-05-21 20:16:16.719 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:16:16.722 +00:00 [INF] Proved results: 0
+2023-05-21 20:16:16.722 +00:00 [INF] Target 2/10
+2023-05-21 20:19:16.744 +00:00 [INF] reproducing errors...
+2023-05-21 20:19:16.847 +00:00 [INF] new exceptions added: 3
+2023-05-21 20:19:16.848 +00:00 [INF] Proved results: 0
+2023-05-21 20:19:16.848 +00:00 [INF] Target 3/10
+2023-05-21 20:21:04.223 +00:00 [INF] reproducing errors...
+2023-05-21 20:21:04.226 +00:00 [INF] new exceptions added: 1
+2023-05-21 20:21:04.227 +00:00 [INF] Proved results: 0
+2023-05-21 20:21:04.227 +00:00 [INF] Target 4/10
+2023-05-21 20:21:04.901 +00:00 [INF] reproducing errors...
+2023-05-21 20:21:04.901 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:21:04.902 +00:00 [INF] Proved results: 0
+2023-05-21 20:21:04.902 +00:00 [INF] Target 5/10
+2023-05-21 20:21:04.915 +00:00 [INF] reproducing errors...
+2023-05-21 20:21:04.916 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:21:04.916 +00:00 [INF] Proved results: 0
+2023-05-21 20:21:04.916 +00:00 [INF] Target 6/10
+2023-05-21 20:21:04.986 +00:00 [INF] reproducing errors...
+2023-05-21 20:21:04.986 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:21:04.986 +00:00 [INF] Proved results: 0
+2023-05-21 20:21:04.986 +00:00 [INF] Target 7/10
+2023-05-21 20:21:05.159 +00:00 [INF] reproducing errors...
+2023-05-21 20:21:05.159 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:21:05.160 +00:00 [INF] Proved results: 0
+2023-05-21 20:21:05.160 +00:00 [INF] Target 8/10
+2023-05-21 20:21:05.635 +00:00 [INF] reproducing errors...
+2023-05-21 20:21:05.636 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:21:05.637 +00:00 [INF] Proved results: 0
+2023-05-21 20:21:05.637 +00:00 [INF] Target 9/10
+2023-05-21 20:21:05.651 +00:00 [INF] reproducing errors...
+2023-05-21 20:21:05.651 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:21:05.651 +00:00 [INF] Proved results: 0
+2023-05-21 20:21:05.651 +00:00 [INF] Target 10/10
+2023-05-21 20:21:06.149 +00:00 [INF] reproducing errors...
+2023-05-21 20:21:06.149 +00:00 [INF] new exceptions added: 0
+2023-05-21 20:21:06.149 +00:00 [INF] Proved results: 0
+2023-05-21 20:21:06.152 +00:00 [INF] Total supported results: 10
+2023-05-21 20:21:06.152 +00:00 [INF] Results without targets: 0
+2023-05-21 20:21:06.152 +00:00 [INF] Founded uniq exceptions: 3
+2023-05-21 20:21:06.152 +00:00 [INF] Total proved results: 0
+2023-05-21 20:21:06.152 +00:00 [INF] ==========
+2023-05-22 12:48:59.320 +00:00 [INF] Started indexing of sequence points for 424 assemblies
+2023-05-22 12:49:00.984 +00:00 [INF] Indexing completed
+2023-05-22 12:49:01.132 +00:00 [INF] Started building of targets for report
+2023-05-22 12:49:01.135 +00:00 [INF] Targets building completed. Viewed results: 163; Supported results: 10; Supported results without targets: 0; Total targets: 10
+2023-05-22 12:49:01.135 +00:00 [INF] Start ProveHypotheses
+2023-05-22 12:49:01.135 +00:00 [INF] Target 1/10
+2023-05-22 12:49:03.573 +00:00 [INF] reproducing errors...
+2023-05-22 12:49:03.575 +00:00 [INF] new exceptions added: 0
+2023-05-22 12:49:03.579 +00:00 [INF] Proved results: 0
+2023-05-22 12:49:03.579 +00:00 [INF] Target 2/10
+2023-05-22 12:52:03.608 +00:00 [INF] reproducing errors...
+2023-05-22 12:52:03.696 +00:00 [INF] new exceptions added: 3
+2023-05-22 12:52:03.697 +00:00 [INF] Proved results: 0
+2023-05-22 12:52:03.697 +00:00 [INF] Target 3/10
+2023-05-22 12:54:03.702 +00:00 [INF] reproducing errors...
+2023-05-22 12:54:03.710 +00:00 [INF] new exceptions added: 1
+2023-05-22 12:54:03.710 +00:00 [INF] Proved results: 0
+2023-05-22 12:54:03.710 +00:00 [INF] Target 4/10
+2023-05-22 12:54:04.256 +00:00 [INF] reproducing errors...
+2023-05-22 12:54:04.256 +00:00 [INF] new exceptions added: 0
+2023-05-22 12:54:04.256 +00:00 [INF] Proved results: 0
+2023-05-22 12:54:04.256 +00:00 [INF] Target 5/10
+2023-05-22 12:54:04.271 +00:00 [INF] reproducing errors...
+2023-05-22 12:54:04.272 +00:00 [INF] new exceptions added: 0
+2023-05-22 12:54:04.272 +00:00 [INF] Proved results: 0
+2023-05-22 12:54:04.272 +00:00 [INF] Target 6/10
+2023-05-22 12:54:04.348 +00:00 [INF] reproducing errors...
+2023-05-22 12:54:04.349 +00:00 [INF] new exceptions added: 0
+2023-05-22 12:54:04.349 +00:00 [INF] Proved results: 0
+2023-05-22 12:54:04.349 +00:00 [INF] Target 7/10
+2023-05-22 12:54:04.384 +00:00 [INF] reproducing errors...
+2023-05-22 12:54:04.385 +00:00 [INF] new exceptions added: 0
+2023-05-22 12:54:04.385 +00:00 [INF] Proved results: 0
+2023-05-22 12:54:04.385 +00:00 [INF] Target 8/10
+2023-05-22 12:54:04.647 +00:00 [INF] reproducing errors...
+2023-05-22 12:54:04.648 +00:00 [INF] new exceptions added: 0
+2023-05-22 12:54:04.649 +00:00 [INF] Proved results: 0
+2023-05-22 12:54:04.649 +00:00 [INF] Target 9/10
+2023-05-22 12:54:04.662 +00:00 [INF] reproducing errors...
+2023-05-22 12:54:04.662 +00:00 [INF] new exceptions added: 0
+2023-05-22 12:54:04.662 +00:00 [INF] Proved results: 0
+2023-05-22 12:54:04.662 +00:00 [INF] Target 10/10
+2023-05-22 12:54:04.865 +00:00 [INF] reproducing errors...
+2023-05-22 12:54:04.866 +00:00 [INF] new exceptions added: 0
+2023-05-22 12:54:04.866 +00:00 [INF] Proved results: 0
+2023-05-22 12:54:04.869 +00:00 [INF] Total supported results: 10
+2023-05-22 12:54:04.869 +00:00 [INF] Results without targets: 0
+2023-05-22 12:54:04.869 +00:00 [INF] Founded uniq exceptions: 3
+2023-05-22 12:54:04.869 +00:00 [INF] Total proved results: 0
+2023-05-22 12:54:04.869 +00:00 [INF] ==========

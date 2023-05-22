@@ -1,0 +1,661 @@
+  Determining projects to restore...
+/home/msedlyarskiy/Veritas/VSharp/VSharp.TestRenderer/VSharp.TestRenderer.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project. [/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj]
+/home/msedlyarskiy/Veritas/VSharp/VSharp.API/VSharp.API.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project. [/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj]
+/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.
+  All projects are up-to-date for restore.
+/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.
+/home/msedlyarskiy/Veritas/VSharp/VSharp.API/VSharp.API.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.
+  VSharp.CSharpUtils -> /home/msedlyarskiy/Veritas/VSharp/VSharp.CSharpUtils/bin/Release/netcoreapp6.0/VSharp.CSharpUtils.dll
+  VSharp.Utils -> /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/bin/Release/netcoreapp6.0/VSharp.Utils.dll
+  VSharp.SILI.Core -> /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI.Core/bin/Release/netcoreapp6.0/VSharp.SILI.Core.dll
+  VSharp.TestExtensions -> /home/msedlyarskiy/Veritas/VSharp/VSharp.TestExtensions/bin/Release/net6.0/VSharp.TestExtensions.dll
+/home/msedlyarskiy/Veritas/VSharp/VSharp.TestRenderer/VSharp.TestRenderer.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.
+  VSharp.TestRenderer -> /home/msedlyarskiy/Veritas/VSharp/VSharp.TestRenderer/bin/Release/net6.0/VSharp.TestRenderer.dll
+  VSharp.Solver -> /home/msedlyarskiy/Veritas/VSharp/VSharp.Solver/bin/Release/netcoreapp6.0/VSharp.Solver.dll
+  VSharp.InternalCalls -> /home/msedlyarskiy/Veritas/VSharp/VSharp.InternalCalls/bin/Release/netcoreapp6.0/VSharp.InternalCalls.dll
+  VSharp.TestRunner -> /home/msedlyarskiy/Veritas/VSharp/VSharp.TestRunner/bin/Release/netcoreapp6.0/VSharp.TestRunner.dll
+  VSharp.IL -> /home/msedlyarskiy/Veritas/VSharp/VSharp.IL/bin/Release/net6.0/VSharp.IL.dll
+  VSharp.SILI -> /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/bin/Release/netcoreapp6.0/VSharp.SILI.dll
+  VSharp.API -> /home/msedlyarskiy/Veritas/VSharp/VSharp.API/bin/Release/netcoreapp6.0/VSharp.API.dll
+  Veritas -> /home/msedlyarskiy/Veritas/Veritas/bin/Release/net6.0/Veritas.dll
+/home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs(24,12): warning CS8618: Non-nullable field '_logger' must contain a non-null value when exiting constructor. Consider declaring the field as nullable. [/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj]
+/home/msedlyarskiy/Veritas/Veritas.Tests/SequencePointsIndexTests.cs(101,27): warning CS8602: Dereference of a possibly null reference. [/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj]
+/home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs(221,22): warning CS8600: Converting null literal or possible null value to non-nullable type. [/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj]
+  Veritas.Tests -> /home/msedlyarskiy/Veritas/Veritas.Tests/bin/Release/net6.0/Veritas.Tests.dll
+Test run for /home/msedlyarskiy/Veritas/Veritas.Tests/bin/Release/net6.0/Veritas.Tests.dll (.NETCoreApp,Version=v6.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.0.2+7778347509e70cdcaa14a09103939fe295a00bb3
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[Error] [5/22/2023 12:34:38 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:38 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:38 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:39 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:39 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:39 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:39 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000002))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:39 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000002))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:40 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000002))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:40 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000002))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:40 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000002))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:40 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000002))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:40 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000002))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:40 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000002))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:40 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80400000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:41 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80400000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:41 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:41 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80400000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:41 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80400000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:41 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80400000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:41 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80400000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:41 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80400000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:42 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80400000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:42 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80400000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:42 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80400000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:42 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xa0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:43 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x88000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:43 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000080))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:43 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000004))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:43 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000004))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:44 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000004))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:44 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000004))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:44 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000004))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:44 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80200001))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:45 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000004))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:45 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000004))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:45 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000004))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:46 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80010000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:46 PM] Explored method: BTree.BTree.ReplaceValue
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000004))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:46 PM] Explored method: BTree.BTree.GetSuccessor
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x84000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:47 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x88000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:47 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:48 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:48 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:48 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:48 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80002000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:49 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x88000002))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:49 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:49 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x88000002))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:49 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:49 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80080000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:49 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:49 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80080000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:50 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:50 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x88000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:50 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x88000002))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:50 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x88000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:50 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:50 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:51 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100400))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:51 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100400))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:51 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100400))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:51 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100400))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:51 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:51 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100400))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:52 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:52 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:52 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100400))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:52 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x84000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:52 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:52 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:52 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80200000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:52 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:52 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:54 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:54 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:55 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:55 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:55 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:55 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:55 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:55 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:56 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:56 PM] Explored method: BTree.BTree.RemoveKey
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:34:56 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:56 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:57 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:57 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:34:57 PM] Explored method: BTree.BTree.GetPredecessor
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x81000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:00 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:02 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:02 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:03 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:03 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:03 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:03 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:03 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:03 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:03 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:03 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:03 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:03 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:04 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:04 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:04 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:04 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:04 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:04 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:04 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:04 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:04 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:05 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:05 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:05 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:05 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:05 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:05 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:05 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:05 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:05 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:06 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:06 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:06 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:06 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:06 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:06 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:07 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:07 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:07 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:07 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:07 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:07 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:07 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:07 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:08 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:08 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:08 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:08 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:08 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:08 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:08 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:09 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:09 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:09 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:09 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:09 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:09 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:09 PM] Explored method: BTree.BTree.FillChild
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #xc0000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:10 PM] Explored method: BTree.BTree.RemoveFromNonLeaf
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80040000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:10 PM] Explored method: BTree.BTree.RemoveFromNonLeaf
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80100000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:11 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:12 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:13 PM] Explored method: BTree.BTree.RemoveFromNonLeaf
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x82000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:16 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:16 PM] Explored method: BTree.BTree.RemoveFromNonLeaf
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80080000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:16 PM] Explored method: BTree.BTree.RemoveFromNonLeaf
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000004))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:18 PM] Explored method: BTree.BTree.RemoveFromNonLeaf
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:19 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:19 PM] Explored method: BTree.BTree.RemoveFromNonLeaf
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:20 PM] Explored method: BTree.BTree.RemoveFromNonLeaf
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:21 PM] Explored method: BTree.BTree.RemoveFromNonLeaf
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x81000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:21 PM] Explored method: BTree.BTree.RemoveFromNonLeaf
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:21 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:21 PM] Explored method: BTree.BTree.RemoveFromNonLeaf
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x81000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:23 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:23 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:24 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:27 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:27 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:28 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:28 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:28 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:28 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:32 PM] Explored method: BTree.BTree.Remove
+Exception: System.ArgumentException The input sequence was empty. (Parameter 'source')
+At: D:\a\_work\1\s\src\FSharp.Core\seq.fs, 1653
+[Error] [5/22/2023 12:35:33 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:35:38 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x81000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:38 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x82000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:39 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:39 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:39 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:39 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:39 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:40 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:40 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:40 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:40 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:40 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:41 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:41 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:41 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:41 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:41 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:41 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:42 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:42 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:42 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:42 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:42 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:42 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:42 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:47 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:47 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:47 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:47 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:47 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:47 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:47 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:48 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:48 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:48 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:48 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:48 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:48 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:35:48 PM] Explored method: BTree.BTree.GetKeyFromNext
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80008000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:36:00 PM] Explored method: BTree.BTree.Remove
+Exception: System.ArgumentException The input sequence was empty. (Parameter 'source')
+At: D:\a\_work\1\s\src\FSharp.Core\seq.fs, 1653
+[Error] [5/22/2023 12:36:01 PM] Explored method: BTree.BTree.Remove
+Exception: System.ArgumentException The input sequence was empty. (Parameter 'source')
+At: D:\a\_work\1\s\src\FSharp.Core\seq.fs, 1653
+[Error] [5/22/2023 12:36:02 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:08 PM] Explored method: BTree.BTree.Remove
+Exception: System.ArgumentException The input sequence was empty. (Parameter 'source')
+At: D:\a\_work\1\s\src\FSharp.Core\seq.fs, 1653
+[Error] [5/22/2023 12:36:09 PM] Explored method: BTree.BTree.Remove
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x88000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:36:09 PM] Explored method: BTree.BTree.Remove
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x82000000))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:36:10 PM] Explored method: BTree.BTree.Remove
+Exception: VSharp.InternalException Unexpected array expression in model: (lambda ((x!1 (_ BitVec 32))) (= x!1 #x80000400))
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Prelude.fs, 17
+[Error] [5/22/2023 12:36:11 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:11 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:12 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:12 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:13 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:14 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:15 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:15 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:15 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:15 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:15 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:15 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:15 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:15 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:15 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:17 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:17 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:17 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:17 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:17 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:17 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:17 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:17 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:17 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+[Error] [5/22/2023 12:36:18 PM] Unknown method: System.Boolean Internal.Runtime.CompilerServices.Unsafe.AreSame(System.Char&, System.Char&)
+
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: < 1 ms - /home/msedlyarskiy/Veritas/Veritas.Tests/bin/Release/net6.0/Veritas.Tests.dll (net6.0)

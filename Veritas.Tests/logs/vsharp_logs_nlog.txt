@@ -1,0 +1,422 @@
+  Determining projects to restore...
+/home/msedlyarskiy/Veritas/VSharp/VSharp.API/VSharp.API.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project. [/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj]
+/home/msedlyarskiy/Veritas/VSharp/VSharp.TestRenderer/VSharp.TestRenderer.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project. [/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj]
+/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.
+  All projects are up-to-date for restore.
+/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.
+/home/msedlyarskiy/Veritas/VSharp/VSharp.API/VSharp.API.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.
+  VSharp.CSharpUtils -> /home/msedlyarskiy/Veritas/VSharp/VSharp.CSharpUtils/bin/Release/netcoreapp6.0/VSharp.CSharpUtils.dll
+/home/msedlyarskiy/Veritas/VSharp/VSharp.TestRenderer/VSharp.TestRenderer.csproj : warning NU1701: Package 'JetBrains.Roslyn.References.Repack 42.42.20220228.125130' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.
+  VSharp.TestExtensions -> /home/msedlyarskiy/Veritas/VSharp/VSharp.TestExtensions/bin/Release/net6.0/VSharp.TestExtensions.dll
+  VSharp.Utils -> /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/bin/Release/netcoreapp6.0/VSharp.Utils.dll
+  VSharp.SILI.Core -> /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI.Core/bin/Release/netcoreapp6.0/VSharp.SILI.Core.dll
+  VSharp.TestRunner -> /home/msedlyarskiy/Veritas/VSharp/VSharp.TestRunner/bin/Release/netcoreapp6.0/VSharp.TestRunner.dll
+  VSharp.Solver -> /home/msedlyarskiy/Veritas/VSharp/VSharp.Solver/bin/Release/netcoreapp6.0/VSharp.Solver.dll
+  VSharp.InternalCalls -> /home/msedlyarskiy/Veritas/VSharp/VSharp.InternalCalls/bin/Release/netcoreapp6.0/VSharp.InternalCalls.dll
+  VSharp.TestRenderer -> /home/msedlyarskiy/Veritas/VSharp/VSharp.TestRenderer/bin/Release/net6.0/VSharp.TestRenderer.dll
+  VSharp.IL -> /home/msedlyarskiy/Veritas/VSharp/VSharp.IL/bin/Release/net6.0/VSharp.IL.dll
+  VSharp.SILI -> /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/bin/Release/netcoreapp6.0/VSharp.SILI.dll
+  VSharp.API -> /home/msedlyarskiy/Veritas/VSharp/VSharp.API/bin/Release/netcoreapp6.0/VSharp.API.dll
+  Veritas -> /home/msedlyarskiy/Veritas/Veritas/bin/Release/net6.0/Veritas.dll
+/home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs(24,12): warning CS8618: Non-nullable field '_logger' must contain a non-null value when exiting constructor. Consider declaring the field as nullable. [/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj]
+/home/msedlyarskiy/Veritas/Veritas.Tests/SequencePointsIndexTests.cs(101,27): warning CS8602: Dereference of a possibly null reference. [/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj]
+/home/msedlyarskiy/Veritas/Veritas.Tests/VSharpAnalyzeTests.cs(221,22): warning CS8600: Converting null literal or possible null value to non-nullable type. [/home/msedlyarskiy/Veritas/Veritas.Tests/Veritas.Tests.csproj]
+  Veritas.Tests -> /home/msedlyarskiy/Veritas/Veritas.Tests/bin/Release/net6.0/Veritas.Tests.dll
+Test run for /home/msedlyarskiy/Veritas/Veritas.Tests/bin/Release/net6.0/Veritas.Tests.dll (.NETCoreApp,Version=v6.0)
+Microsoft (R) Test Execution Command Line Tool Version 17.0.2+7778347509e70cdcaa14a09103939fe295a00bb3
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[Error] [5/22/2023 12:49:01 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:02 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:02 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:02 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:02 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:02 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:02 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:02 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:02 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:03 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:03 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:03 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:03 PM] Unknown method: System.Int64 System.Environment.get_TickCount64()
+[Error] [5/22/2023 12:49:03 PM] Explored method: NLog.Config.XmlLoggingConfiguration..ctor
+Exception: System.Collections.Generic.KeyNotFoundException An index satisfying the predicate was not found in the collection.
+At: D:\a\_work\1\s\src\FSharp.Core\array.fs, 1114
+[Error] [5/22/2023 12:49:03 PM] Unknown method: System.Void System.Reflection.Assembly.GetEntryAssemblyNative(System.Runtime.CompilerServices.ObjectHandleOnStack)
+[Error] [5/22/2023 12:49:04 PM] Unknown method: System.Void System.Reflection.Assembly.GetEntryAssemblyNative(System.Runtime.CompilerServices.ObjectHandleOnStack)
+[Error] [5/22/2023 12:49:05 PM] Unknown method: System.Int32 Interop+Sys.LChflagsCanSetHiddenFlag()
+[Error] [5/22/2023 12:49:05 PM] Unknown method: System.Boolean System.Numerics.Vector.get_IsHardwareAccelerated()
+[Error] [5/22/2023 12:49:05 PM] Unknown method: System.Int32 System.Reflection.RuntimeAssembly.GetToken(System.Reflection.RuntimeAssembly)
+[Error] [5/22/2023 12:49:05 PM] Unknown method: System.Void System.Reflection.Assembly.GetEntryAssemblyNative(System.Runtime.CompilerServices.ObjectHandleOnStack)
+[Error] [5/22/2023 12:49:05 PM] Unknown method: System.Void System.Reflection.Assembly.GetEntryAssemblyNative(System.Runtime.CompilerServices.ObjectHandleOnStack)
+[Error] [5/22/2023 12:49:05 PM] Unknown method: System.Void System.Reflection.Assembly.GetEntryAssemblyNative(System.Runtime.CompilerServices.ObjectHandleOnStack)
+[Error] [5/22/2023 12:49:06 PM] Unknown method: System.Void System.Reflection.Assembly.GetEntryAssemblyNative(System.Runtime.CompilerServices.ObjectHandleOnStack)
+[Error] [5/22/2023 12:49:06 PM] Unknown method: System.Void System.Reflection.Assembly.GetEntryAssemblyNative(System.Runtime.CompilerServices.ObjectHandleOnStack)
+[Error] [5/22/2023 12:49:06 PM] Unknown method: System.Void System.Reflection.Assembly.GetEntryAssemblyNative(System.Runtime.CompilerServices.ObjectHandleOnStack)
+[Error] [5/22/2023 12:49:06 PM] Explored method: NLog.Config.XmlLoggingConfiguration.LoadFromXmlFile
+Exception: VSharp.InternalException GetContentsRef: unexpected pointer to contents (StaticsPtr StaticLocation <PrivateImplementationDetails> as System.Void, offset = 583248)
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/Interpreter.fs, 134
+[Error] [5/22/2023 12:49:06 PM] Explored method: NLog.Config.XmlLoggingConfiguration.LoadFromXmlFile
+Exception: VSharp.InternalException fallThroughTarget: unexpected ip transition ExceptionMechanism
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.IL/MethodBody.fs, 348
+[Error] [5/22/2023 12:49:36 PM] WeightedSearcher: failed to get weight of state VSharp.InternalException: Getting CFG of method System.Void System.Threading.Monitor.ReliableEnter(System.Object, System.Boolean&) without body (extern or abstract)
+   at <StartupCode$VSharp-IL>.$CFG.get_ForceCFG@317.Invoke(String message) in /home/msedlyarskiy/Veritas/VSharp/VSharp.IL/CFG.fs:line 317
+   at Microsoft.FSharp.Core.PrintfModule.gprintf[a,TState,TResidue,TResult,TPrinter](FSharpFunc`2 envf, PrintfFormat`4 format) in D:\a\_work\1\s\src\FSharp.Core\printf.fs:line 1398
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.frameWeight(Method frameMethod, Int32 frameOffset, UInt32 frameNumber) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 24
+   at <StartupCode$VSharp-SILI>.$DistanceWeighter.calculateWeight@50.Invoke(Int32 frameNumber, Tuple`2 tupledArg) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 51
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.mapi@116.DoMoveNext(b& curr) in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 124
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.MapEnumerator`1.System.Collections.IEnumerator.MoveNext() in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 88
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.calculateCallWeight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 59
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.VSharp.Interpreter.IL.IWeighter.Weight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 109
+   at VSharp.Interpreter.IL.WeightedSearcher.optionWeight(cilState s) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/Searcher.fs:line 133
+[Error] [5/22/2023 12:49:36 PM] WeightedSearcher: failed to get weight of state VSharp.InternalException: Getting CFG of method System.Void System.Threading.Monitor.ReliableEnter(System.Object, System.Boolean&) without body (extern or abstract)
+   at <StartupCode$VSharp-IL>.$CFG.get_ForceCFG@317.Invoke(String message) in /home/msedlyarskiy/Veritas/VSharp/VSharp.IL/CFG.fs:line 317
+   at Microsoft.FSharp.Core.PrintfModule.gprintf[a,TState,TResidue,TResult,TPrinter](FSharpFunc`2 envf, PrintfFormat`4 format) in D:\a\_work\1\s\src\FSharp.Core\printf.fs:line 1398
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.frameWeight(Method frameMethod, Int32 frameOffset, UInt32 frameNumber) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 24
+   at <StartupCode$VSharp-SILI>.$DistanceWeighter.calculateWeight@50.Invoke(Int32 frameNumber, Tuple`2 tupledArg) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 51
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.mapi@116.DoMoveNext(b& curr) in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 124
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.MapEnumerator`1.System.Collections.IEnumerator.MoveNext() in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 88
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.calculateCallWeight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 59
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.VSharp.Interpreter.IL.IWeighter.Weight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 109
+   at VSharp.Interpreter.IL.WeightedSearcher.optionWeight(cilState s) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/Searcher.fs:line 133
+[Error] [5/22/2023 12:49:36 PM] Explored method: NLog.Config.XmlLoggingConfiguration.ToString
+Exception: VSharp.InternalException Method with out parameters mocking not implemented
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.Utils/Mocking.fs, 30
+[Error] [5/22/2023 12:49:37 PM] WeightedSearcher: failed to get weight of state VSharp.InternalException: Getting CFG of method System.Boolean System.Collections.IEnumerator.MoveNext(this) without body (extern or abstract)
+   at <StartupCode$VSharp-IL>.$CFG.get_ForceCFG@317.Invoke(String message) in /home/msedlyarskiy/Veritas/VSharp/VSharp.IL/CFG.fs:line 317
+   at Microsoft.FSharp.Core.PrintfModule.gprintf[a,TState,TResidue,TResult,TPrinter](FSharpFunc`2 envf, PrintfFormat`4 format) in D:\a\_work\1\s\src\FSharp.Core\printf.fs:line 1398
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.frameWeight(Method frameMethod, Int32 frameOffset, UInt32 frameNumber) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 24
+   at <StartupCode$VSharp-SILI>.$DistanceWeighter.calculateWeight@50.Invoke(Int32 frameNumber, Tuple`2 tupledArg) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 51
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.mapi@116.DoMoveNext(b& curr) in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 124
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.MapEnumerator`1.System.Collections.IEnumerator.MoveNext() in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 88
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.calculateCallWeight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 59
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.VSharp.Interpreter.IL.IWeighter.Weight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 109
+   at VSharp.Interpreter.IL.WeightedSearcher.optionWeight(cilState s) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/Searcher.fs:line 133
+[Error] [5/22/2023 12:49:39 PM] Unknown method: System.Int32 Interop+Sys.LChflagsCanSetHiddenFlag()
+[Error] [5/22/2023 12:49:39 PM] Explored method: NLog.Config.XmlLoggingConfiguration.CreateFileReader
+Exception: VSharp.InternalException GetContentsRef: unexpected pointer to contents (StaticsPtr StaticLocation <PrivateImplementationDetails> as System.Void, offset = 583248)
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/Interpreter.fs, 134
+[Error] [5/22/2023 12:52:03 PM] Unknown method: System.Boolean System.Numerics.Vector.get_IsHardwareAccelerated()
+[Error] [5/22/2023 12:52:04 PM] Unknown method: System.Int32 System.Reflection.RuntimeAssembly.GetToken(System.Reflection.RuntimeAssembly)
+[Error] [5/22/2023 12:52:04 PM] Explored method: NLog.Config.XmlLoggingConfiguration.LoadFromXmlFile
+Exception: VSharp.InternalException GetContentsRef: unexpected pointer to contents (StaticsPtr StaticLocation <PrivateImplementationDetails> as System.Void, offset = 583248)
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/Interpreter.fs, 134
+[Error] [5/22/2023 12:52:04 PM] Explored method: NLog.Config.XmlLoggingConfiguration.LoadFromXmlFile
+Exception: VSharp.InternalException fallThroughTarget: unexpected ip transition ExceptionMechanism
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.IL/MethodBody.fs, 348
+[Error] [5/22/2023 12:52:46 PM] WeightedSearcher: failed to get weight of state VSharp.InternalException: Getting CFG of method System.Void System.Threading.Monitor.ReliableEnter(System.Object, System.Boolean&) without body (extern or abstract)
+   at <StartupCode$VSharp-IL>.$CFG.get_ForceCFG@317.Invoke(String message) in /home/msedlyarskiy/Veritas/VSharp/VSharp.IL/CFG.fs:line 317
+   at Microsoft.FSharp.Core.PrintfModule.gprintf[a,TState,TResidue,TResult,TPrinter](FSharpFunc`2 envf, PrintfFormat`4 format) in D:\a\_work\1\s\src\FSharp.Core\printf.fs:line 1398
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.frameWeight(Method frameMethod, Int32 frameOffset, UInt32 frameNumber) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 24
+   at <StartupCode$VSharp-SILI>.$DistanceWeighter.calculateWeight@50.Invoke(Int32 frameNumber, Tuple`2 tupledArg) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 51
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.mapi@116.DoMoveNext(b& curr) in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 124
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.MapEnumerator`1.System.Collections.IEnumerator.MoveNext() in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 88
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.calculateCallWeight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 59
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.VSharp.Interpreter.IL.IWeighter.Weight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 109
+   at VSharp.Interpreter.IL.WeightedSearcher.optionWeight(cilState s) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/Searcher.fs:line 133
+[Error] [5/22/2023 12:52:47 PM] WeightedSearcher: failed to get weight of state VSharp.InternalException: Getting CFG of method System.Void System.Threading.Monitor.ReliableEnter(System.Object, System.Boolean&) without body (extern or abstract)
+   at <StartupCode$VSharp-IL>.$CFG.get_ForceCFG@317.Invoke(String message) in /home/msedlyarskiy/Veritas/VSharp/VSharp.IL/CFG.fs:line 317
+   at Microsoft.FSharp.Core.PrintfModule.gprintf[a,TState,TResidue,TResult,TPrinter](FSharpFunc`2 envf, PrintfFormat`4 format) in D:\a\_work\1\s\src\FSharp.Core\printf.fs:line 1398
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.frameWeight(Method frameMethod, Int32 frameOffset, UInt32 frameNumber) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 24
+   at <StartupCode$VSharp-SILI>.$DistanceWeighter.calculateWeight@50.Invoke(Int32 frameNumber, Tuple`2 tupledArg) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 51
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.mapi@116.DoMoveNext(b& curr) in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 124
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.MapEnumerator`1.System.Collections.IEnumerator.MoveNext() in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 88
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.calculateCallWeight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 59
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.VSharp.Interpreter.IL.IWeighter.Weight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 109
+   at VSharp.Interpreter.IL.WeightedSearcher.optionWeight(cilState s) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/Searcher.fs:line 133
+[Error] [5/22/2023 12:52:48 PM] WeightedSearcher: failed to get weight of state VSharp.InternalException: Getting CFG of method System.Boolean System.Collections.IEnumerator.MoveNext(this) without body (extern or abstract)
+   at <StartupCode$VSharp-IL>.$CFG.get_ForceCFG@317.Invoke(String message) in /home/msedlyarskiy/Veritas/VSharp/VSharp.IL/CFG.fs:line 317
+   at Microsoft.FSharp.Core.PrintfModule.gprintf[a,TState,TResidue,TResult,TPrinter](FSharpFunc`2 envf, PrintfFormat`4 format) in D:\a\_work\1\s\src\FSharp.Core\printf.fs:line 1398
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.frameWeight(Method frameMethod, Int32 frameOffset, UInt32 frameNumber) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 24
+   at <StartupCode$VSharp-SILI>.$DistanceWeighter.calculateWeight@50.Invoke(Int32 frameNumber, Tuple`2 tupledArg) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 51
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.mapi@116.DoMoveNext(b& curr) in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 124
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.MapEnumerator`1.System.Collections.IEnumerator.MoveNext() in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 88
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.calculateCallWeight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 59
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.VSharp.Interpreter.IL.IWeighter.Weight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 109
+   at VSharp.Interpreter.IL.WeightedSearcher.optionWeight(cilState s) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/Searcher.fs:line 133
+[Error] [5/22/2023 12:52:49 PM] WeightedSearcher: failed to get weight of state VSharp.InternalException: Getting CFG of method System.Boolean System.Collections.IEnumerator.MoveNext(this) without body (extern or abstract)
+   at <StartupCode$VSharp-IL>.$CFG.get_ForceCFG@317.Invoke(String message) in /home/msedlyarskiy/Veritas/VSharp/VSharp.IL/CFG.fs:line 317
+   at Microsoft.FSharp.Core.PrintfModule.gprintf[a,TState,TResidue,TResult,TPrinter](FSharpFunc`2 envf, PrintfFormat`4 format) in D:\a\_work\1\s\src\FSharp.Core\printf.fs:line 1398
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.frameWeight(Method frameMethod, Int32 frameOffset, UInt32 frameNumber) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 24
+   at <StartupCode$VSharp-SILI>.$DistanceWeighter.calculateWeight@50.Invoke(Int32 frameNumber, Tuple`2 tupledArg) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 51
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.mapi@116.DoMoveNext(b& curr) in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 124
+   at Microsoft.FSharp.Collections.Internal.IEnumerator.MapEnumerator`1.System.Collections.IEnumerator.MoveNext() in D:\a\_work\1\s\src\FSharp.Core\seq.fs:line 88
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.calculateCallWeight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 59
+   at VSharp.Interpreter.IL.ShortestDistanceWeighter.VSharp.Interpreter.IL.IWeighter.Weight(cilState state) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/DistanceWeighter.fs:line 109
+   at VSharp.Interpreter.IL.WeightedSearcher.optionWeight(cilState s) in /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/Searcher.fs:line 133
+[Error] [5/22/2023 12:52:55 PM] Unknown method: System.Int32 Interop+Sys.LChflagsCanSetHiddenFlag()
+[Error] [5/22/2023 12:52:55 PM] Explored method: NLog.Config.XmlLoggingConfiguration.CreateFileReader
+Exception: VSharp.InternalException GetContentsRef: unexpected pointer to contents (StaticsPtr StaticLocation <PrivateImplementationDetails> as System.Void, offset = 583248)
+At: /home/msedlyarskiy/Veritas/VSharp/VSharp.SILI/Interpreter.fs, 134
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.XmlLoggingConfiguration.CreateFileReader
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement..cctor
+Exception: System.NotSupportedException Derived classes must provide an implementation.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.ParseTargetsElement
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.CreateTargetType
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.ParseTargetElement
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.ParseTargetWrapper
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.ParseCompoundTarget
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.ConfigureObjectFromAttributes
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.SetPropertyValueFromString
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.SetPropertyValuesFromElement
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.AddArrayItemFromElement
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.XmlLoggingConfiguration.CreateFileReader
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.ParseArrayItemFromElement
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.SetFilterFromElement
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.CreateSimpleLayout
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.TryCreateLayoutInstance
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.TryCreateInstance
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.FactoryCreateInstance
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.RegisterExtensionFromAssemblyName
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.ConfigureFromAttributesAndElements
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.WrapWithDefaultWrapper
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.ParseNullableBooleanValue
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.MustThrowConfigException
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser.GetName
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement.Create
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement..ctor
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement.get_Name
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:03 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement.get_ValueLookup
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement.get_ValidChildren
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement.get_Values
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement.NLog.Config.ILoggingConfigurationElement.get_Children
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement.GetRequiredValue
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement.GetOptionalValue
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement.CreateValueLookup
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement.ToString
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement..cctor
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser+ValidatedConfigurationElement+<YieldAndCacheValidChildren>d__14.MoveNext
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser.SetLayoutFromElement
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser.MatchesName
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser.IsTargetRefElement
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser.TryCreateFilterInstance
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser.IsTargetElement
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser.ParseBooleanValue
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Config.LoggingConfigurationParser.WrapWithAsyncTargetWrapper
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.LogEventInfo.ResetMessageTemplateParameters
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.MailTarget.ConfigureMailClient
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.MailTarget.ConvertDirectoryLocation
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.MailTarget.CheckRequiredParameters
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.MailTarget.GetSmtpSettingsKey
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.MailTarget.AppendLayout
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.MailTarget.CreateMailMessage
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.MailTarget.AddAddresses
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionParserTests.RelationalOperatorTestInner
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionParserTests+FooLayoutRenderer.Append
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionParserTests+MyConditionMethods.CheckIt
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionEvaluatorTests.AssertEvaluationResult
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionEvaluatorTests+MyConditionMethods.GetGuid
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionEvaluatorTests+MyConditionMethods.ToInt16
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionEvaluatorTests+MyConditionMethods.ToSingle
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionEvaluatorTests+MyConditionMethods.ToDecimal
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionEvaluatorTests+MyConditionMethods.ToDouble
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionEvaluatorTests.CreateWellKnownContext
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionEvaluatorTests+MyConditionMethods.ToInt32
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionEvaluatorTests+MyConditionMethods.ToInt64
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.UnitTests.Conditions.ConditionEvaluatorTests+MyConditionMethods.ToDateTime
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.WindowsRegistry.Tests.RegistryTests.AssertLayoutRendererResult
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget.Write
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget.WriteEntry
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget.GetEntryType
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget.GetFixedSource
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget.CreateEventSourceIfNeeded
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.get_Source
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.set_Source
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.get_Log
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.set_Log
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.get_MachineName
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.set_MachineName
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.get_MaximumKilobytes
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.set_MaximumKilobytes
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.get_IsEventLogAssociated
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.WriteEntry
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.AssociateNewEventLog
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.DeleteEventSource
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.SourceExists
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.LogNameFromSourceName
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.CreateEventSource
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+[Error] [5/22/2023 12:54:04 PM] Explored method: NLog.Targets.EventLogTarget+EventLogWrapper.Dispose
+Exception: System.InvalidOperationException Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+At: , 0
+
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: < 1 ms - /home/msedlyarskiy/Veritas/Veritas.Tests/bin/Release/net6.0/Veritas.Tests.dll (net6.0)
+  Determining projects to restore...
+Attempting to cancel the build...
+Attempting to cancel the build...
+Attempting to cancel the build...
+Attempting to cancel the build...
+Attempting to cancel the build...
+Attempting to cancel the build...
