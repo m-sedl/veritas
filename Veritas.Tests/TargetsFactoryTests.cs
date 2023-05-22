@@ -38,8 +38,8 @@ public class TargetsFactoryTests
                 "../../../../../benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
             },
             "../../../../../benchmark/tools/reports/pvs/litedb_LiteDB.sarif",
-            19,
-            1
+            20,
+            0,
         };
         yield return new object[]
         {
@@ -59,8 +59,8 @@ public class TargetsFactoryTests
                 "../../../../../benchmark/projects/NLog/tests/PackageLoaderTestAssembly/bin/Debug/netstandard2.0/publish",
             },
             "../../../../../benchmark/tools/reports/pvs/NLog_src_NLog.sarif",
-            9,
-            1
+            10,
+            0
         };
         yield return new object[]
         {
@@ -78,8 +78,8 @@ public class TargetsFactoryTests
                 "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
             },
             "../../../../../benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif",
-            109,
-            5
+            110,
+            4
         };
     }
 
@@ -119,7 +119,7 @@ public class TargetsFactoryTests
         {
             var location = t.Result.Locations[0].PhysicalLocation;
             var lines = File.ReadAllLines(location.ArtifactLocation.Uri.AbsolutePath);
-            var l = lines[location.Region.StartLine - 1];
+            var l = lines[location.Region.StartLine - 1 - 2];
             var erasedLine = serviceSymbols.Replace(l, "");
             if (String.IsNullOrWhiteSpace(erasedLine) || l.Trim().StartsWith("//") || l.Trim().StartsWith("#"))
             {

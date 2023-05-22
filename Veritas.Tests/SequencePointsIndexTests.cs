@@ -38,8 +38,8 @@ public class SequencePointsIndexTests
                 "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
             },
             "../../../../../benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif",
-            31,
-            341
+            26,
+            352
         };
         yield return new object[]
         {
@@ -52,8 +52,8 @@ public class SequencePointsIndexTests
                 "../../../../../benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
             },
             "../../../../../benchmark/tools/reports/pvs/litedb_LiteDB.sarif",
-            1,
-            109
+            0,
+            110
         };
         yield return new object[]
         {
@@ -73,8 +73,8 @@ public class SequencePointsIndexTests
                 "../../../../../benchmark/projects/NLog/tests/PackageLoaderTestAssembly/bin/Debug/netstandard2.0/publish",
             },
             "../../../../../benchmark/tools/reports/pvs/NLog_src_NLog.sarif",
-            10,
-            152
+            9,
+            154
         };
     }
 

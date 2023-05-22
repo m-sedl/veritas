@@ -41,8 +41,6 @@ public class TargetsFactory
         _index = index;
     }
 
-    // maybe should return FactoryResult with targets
-    // and sarif issues for which not founded any location
     public TargetsFactoryResult BuildTargets(SarifLog sarif)
     {
         _logger.Information("Started building of targets for report");

@@ -54,7 +54,7 @@ public class ExceptionProcessor
         {
             var loc = t.Result.Locations[0].PhysicalLocation;
             var file = loc.ArtifactLocation.Uri.AbsolutePath;
-            var line = loc.Region.StartLine;
+            var line = loc.Region.StartLine - 2;
 
             foreach (var e in _exceptions)
             {
