@@ -89,7 +89,9 @@ public class VSharpAnalyzeTests
     public void ProvingQuality(string[] binDirs, string reportPath)
     {
         var dllPaths = binDirs.SelectMany(Utils.GetAllDlls).ToList();
-        //dllPaths.Reverse();
+        if (reportPath.Contains("OpenRA")) {
+            dllPaths.Reverse();
+        }
 
         var projectName = Path.GetFileNameWithoutExtension(reportPath);
         _logger = new LoggerConfiguration()
@@ -117,6 +119,11 @@ public class VSharpAnalyzeTests
             var provedTargets = TryProveTargets(new List<Target>{t}, exceptions);
             PrintInfo($"Proved results: {provedTargets.Count}");
             provedTargetsCount += provedTargets.Count;
+
+            foreach (var b in provedTargets) 
+            {
+                PrintInfo("Method: " + ResultToString(b.Key.Result));
+            }
         }
 
         // PrintInfo($"Start TryProveTargets");
@@ -157,11 +164,10 @@ public class VSharpAnalyzeTests
     {
         var testOut = new DirectoryInfo("../../../../../Veritas/Veritas.Tests/test_out");
         var resultPath = Path.Combine(testOut.FullName, "VSharp.tests.0");
-        var timeout = 120;
         var targets = BuildVSharpTargets(t);
         try
         {
-            VSharp.TestGenerator.ProveHypotheses(targets, timeout, 10, testOut.FullName, verbosity: Verbosity.Error);
+            VSharp.TestGenerator.ProveHypotheses(targets, 120, 60, testOut.FullName, verbosity: Verbosity.Error);
         }
         catch (Exception ex)
         {
@@ -231,7 +237,7 @@ public class VSharpAnalyzeTests
             else if (e.InnerException != null && ex != null)
             {
                 _logger.Warning($"Founded inner exception with unexpected type: {e.InnerException.GetType().FullName}");
-                // maybe return e.InnerException?
+                return e.InnerException;
             }
         }
         return null;
@@ -245,8 +251,10 @@ public class VSharpAnalyzeTests
             var loc = t.Result.Locations[0].PhysicalLocation;
             var file = loc.ArtifactLocation.Uri.AbsolutePath;
 
-            var pattern1 = $"{file}:line {loc.Region.StartLine - 2}";
-            var pattern2 = $"{file}, {loc.Region.StartLine - 2}";
+            var pattern1 = $"{file}:line {loc.Region.StartLine}";
+            var pattern2 = $"{file}, {loc.Region.StartLine}";
+            // var pattern1 = $"{file}:line {loc.Region.StartLine - 2}";
+            // var pattern2 = $"{file}, {loc.Region.StartLine - 2}";
 
             var proofs = new List<Exception>();
             foreach (var ex in exceptions)
@@ -280,6 +288,13 @@ public class VSharpAnalyzeTests
         return false;
     }
 
+    private string ResultToString(Result result)
+    {
+        var loc = result.Locations[0].PhysicalLocation;
+        var file = loc.ArtifactLocation.Uri.AbsolutePath;
+        return $"{result.RuleId} {file}:line {loc.Region.StartLine}";
+    }
+
     public static IEnumerable<object[]> AnalyzedProjects()
     {
         // yield return new object[]
@@ -307,13 +322,29 @@ public class VSharpAnalyzeTests
         // {
         //     new[]
         //     {
+        //         "../../../../../benchmark/projects/Cosmos/source/Cosmos.Debug.Kernel.Plugs.Asm/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/Cosmos/source/Cosmos.HAL2/bin/Debug/net6.0/publish",
+        //         "../../../../../benchmark/projects/Cosmos/source/Cosmos.Core_Plugs/bin/Debug/net6.0/publish",
+        //         "../../../../../benchmark/projects/Cosmos/source/Cosmos.System2_Plugs/bin/Debug/net6.0/publish",
+        //         "../../../../../benchmark/projects/Cosmos/source/Cosmos.Debug.Kernel/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/Cosmos/source/Cosmos.System2/bin/Debug/net6.0/publish",
+        //         "../../../../../benchmark/projects/Cosmos/source/Cosmos.Core_Asm/bin/Debug/net6.0/publish",
+        //         "../../../../../benchmark/projects/Cosmos/source/Cosmos.Common/bin/Debug/net6.0/publish",
+        //         "../../../../../benchmark/projects/Cosmos/source/Cosmos.Core/bin/Debug/net6.0/publish"
+        //     },
+        //     "../../../../../benchmark/tools/reports/pvs/cosmos_kernel.sarif"
+        // };
+        // yield return new object[]
+        // {
+        //     new[]
+        //     {
         //         "../../../../../benchmark/projects/litedb/LiteDB.Stress/bin/Debug/netcoreapp3.1/publish",
         //         "../../../../../benchmark/projects/litedb/LiteDB.Tests/bin/Debug/netcoreapp3.1/publish",
         //         "../../../../../benchmark/projects/litedb/LiteDB.Benchmarks/bin/Debug/netcoreapp3.1/publish",
         //         "../../../../../benchmark/projects/litedb/LiteDB/bin/Debug/netstandard2.0/publish",
         //         "../../../../../benchmark/projects/litedb/LiteDB.Shell/bin/Debug/netcoreapp3.1/publish"
         //     },
-        //     "../../../../../benchmark/tools/reports/pvs/litedb_LiteDB.sarif"
+        //     "../../../../../benchmark/tools/reports/pvs/litedb_new.sarif"
         // };
         // yield return new object[]
         // {
@@ -332,7 +363,7 @@ public class VSharpAnalyzeTests
         //         "../../../../../benchmark/projects/NLog/tests/ManuallyLoadedExtension/bin/Debug/netstandard2.0/publish",
         //         "../../../../../benchmark/projects/NLog/tests/PackageLoaderTestAssembly/bin/Debug/netstandard2.0/publish",
         //     },
-        //     "../../../../../benchmark/tools/reports/pvs/NLog_src_NLog.sarif"
+        //     "../../../../../benchmark/tools/reports/pvs/nlog_new.sarif"
         // };
         // yield return new object[]
         // {
@@ -349,7 +380,7 @@ public class VSharpAnalyzeTests
         //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Data/bin/Debug/net6.0/linux-x64/publish",
         //         "../../../../../benchmark/projects/btcpayserver/BTCPayServer.Rating/bin/Debug/net6.0/linux-x64/publish"
         //     },
-        //     "../../../../../benchmark/tools/reports/pvs/btcpayserver_btcpayserver.sarif"
+        //     "../../../../../benchmark/tools/reports/pvs/btc_new.sarif"
         // };
         // yield return new object[]
         // {
@@ -363,7 +394,7 @@ public class VSharpAnalyzeTests
         //         "../../../../../benchmark/projects/moq4/tests/Moq.Tests/bin/Debug/netcoreapp3.1/publish",
         //         "../../../../../benchmark/projects/moq4/tests/Moq.Tests/bin/Debug/net6.0/publish",
         //     },
-        //     "../../../../../benchmark/tools/reports/pvs/moq4_Moq.sarif"
+        //     "../../../../../benchmark/tools/reports/pvs/moq4_new.sarif"
         // };
         // yield return new object[]
         // {
@@ -371,7 +402,7 @@ public class VSharpAnalyzeTests
         //     {
         //         "../../../../../benchmark/projects/nunit/bin/Debug/net6.0",
         //     },
-        //     "../../../../../benchmark/tools/reports/pvs/nunit_nunit.sarif"
+        //     "../../../../../benchmark/tools/reports/pvs/nunit_new.sarif"
         // };
         // yield return new object[]
         // {
@@ -403,7 +434,7 @@ public class VSharpAnalyzeTests
         //         "../../../../../benchmark/projects/AutoMapper/src/UnitTests/bin/Debug/net6.0/publish",
         //         "../../../../../benchmark/projects/AutoMapper/src/Benchmark/bin/Debug/net6.0/publish",
         //     },
-        //     "../../../../../benchmark/tools/reports/pvs/AutoMapper_AutoMapper.sarif"
+        //     "../../../../../benchmark/tools/reports/pvs/automapper_new.sarif"
         // };
         // yield return new object[]
         // {
@@ -413,20 +444,20 @@ public class VSharpAnalyzeTests
         //         "../../../../../benchmark/projects/spbu-homeworks-1/Semester2/Homework8/BTree/bin/Debug/net5.0/publish"
         
         //     },
-        //     "../../../../../benchmark/tools/reports/pvs/spbu-homeworks-1_Semester2_Homework8_BTree_BTree.sarif"
+        //     "../../../../../benchmark/tools/reports/pvs/btree_new.sarif"
         // };
-        yield return new object[]
-        {
-            new[]
-            {
-                "../../../../../benchmark/projects/ILSpy/ICSharpCode.ILSpyCmd/bin/Debug/net6.0/publish",
-                "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler/bin/Debug/netstandard2.0/publish",
-                "../../../../../benchmark/projects/ILSpy/ICSharpCode.ILSpyX/bin/Debug/net6.0/publish",
-                "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler.TestRunner/bin/Debug/net6.0-windows/publish",
-                "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler.PowerShell/bin/Debug/netstandard2.0/publish"
-            },
-            "../../../../../benchmark/tools/reports/pvs/ILSpy.sarif"
-        };
+        // yield return new object[]
+        // {
+        //     new[]
+        //     {
+        //         "../../../../../benchmark/projects/ILSpy/ICSharpCode.ILSpyCmd/bin/Debug/net6.0/publish",
+        //         "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler/bin/Debug/netstandard2.0/publish",
+        //         "../../../../../benchmark/projects/ILSpy/ICSharpCode.ILSpyX/bin/Debug/net6.0/publish",
+        //         "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler.TestRunner/bin/Debug/net6.0-windows/publish",
+        //         "../../../../../benchmark/projects/ILSpy/ICSharpCode.Decompiler.PowerShell/bin/Debug/netstandard2.0/publish"
+        //     },
+        //     "../../../../../benchmark/tools/reports/pvs/ILSpy_new.sarif"
+        // };
         // yield return new object[]
         // {
         //     new[]
@@ -435,6 +466,16 @@ public class VSharpAnalyzeTests
         //     },
         //     "../../../../../benchmark/tools/reports/pvs/OpenRA.sarif"
         // };
+        yield return new object[]
+        {
+            new[]
+            {
+                "../../../../../benchmark/projects/JulietNET/JulietNET/bin/Debug/net6.0/publish",
+                "../../../../../benchmark/projects/JulietNET/CWE476/bin/Debug/net6.0/publish",
+                "../../../../../benchmark/projects/JulietNET/CWE129/bin/Debug/net6.0/publish"
+            },
+            "../../../../../benchmark/tools/reports/pvs/juliet_new_2.sarif"
+        };
         // yield return new object[]
         // {
         //     new[]

@@ -110,9 +110,8 @@ public class SequencePointsIndex : ISequencePointsIndex
             return new List<PointInfo>();
         }
 
-        // - 2 special for pvs
-        var startLine = location.Region.StartLine - 2;
-        var endLine = location.Region.EndLine - 2;
+        var startLine = location.Region.StartLine;
+        var endLine = location.Region.EndLine;
         var sf = _index[sourceFilePath];
         var sp = sf.Where(sp => sp.StartLine >= startLine && endLine <= sp.EndLine).ToList();
         return sp;

@@ -119,7 +119,7 @@ public class TargetsFactoryTests
         {
             var location = t.Result.Locations[0].PhysicalLocation;
             var lines = File.ReadAllLines(location.ArtifactLocation.Uri.AbsolutePath);
-            var l = lines[location.Region.StartLine - 1 - 2];
+            var l = lines[location.Region.StartLine - 1];
             var erasedLine = serviceSymbols.Replace(l, "");
             if (String.IsNullOrWhiteSpace(erasedLine) || l.Trim().StartsWith("//") || l.Trim().StartsWith("#"))
             {

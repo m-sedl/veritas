@@ -123,15 +123,16 @@ public class SequencePointsIndexTests
     [InlineData("../../../../../benchmark/tools/reports/pvs/ILSpy.sarif")]
     [InlineData("../../../../../benchmark/tools/reports/pvs/OpenRA.sarif")]
     [InlineData("../../../../../benchmark/tools/reports/pvs/Newtonsoft.Json_Src_Newtonsoft.Json.sarif")]
+    [InlineData("../../../../../benchmark/tools/reports/pvs/cosmos_kernel.sarif")]
     public void LoadSarif(string path)
     {
         var report = SarifLog.Load(path);
         var v3080 = report.Runs.SelectMany(run => run.Results).Count(sarifResult => sarifResult.RuleId == "V3080");
         var v3146 = report.Runs.SelectMany(run => run.Results).Count(sarifResult => sarifResult.RuleId == "V3146");
         var v3106 = report.Runs.SelectMany(run => run.Results).Count(sarifResult => sarifResult.RuleId == "V3106");
-        var v3022 = report.Runs.SelectMany(run => run.Results).Count(sarifResult => sarifResult.RuleId == "V3022");
+        var v3115 = report.Runs.SelectMany(run => run.Results).Count(sarifResult => sarifResult.RuleId == "V3115");
         _output.WriteLine(path.Split("/").Last());
-        _output.WriteLine($"V3022: {v3022}");
+        _output.WriteLine($"V3115: {v3115}");
         _output.WriteLine($"V3080: {v3080}");
         _output.WriteLine($"V3146: {v3146}");
         _output.WriteLine($"V3106: {v3106}");
